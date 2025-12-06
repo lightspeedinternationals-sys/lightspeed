@@ -81,27 +81,19 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Logo with Slide-in and Float animation */}
-            <motion.div
-              className="relative"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
-            >
-              <motion.img
+            {/* Static Logo with Subtle Glow */}
+            <div className="relative flex justify-center items-center">
+              {/* Static subtle glow */}
+              <div
+                className="absolute inset-0 bg-primary/20 blur-[60px] rounded-full"
+                style={{ transform: "scale(1.5)" }}
+              />
+              <img
                 src={lightSpeedLogo}
                 alt="Light Speed Logo"
                 className="w-32 h-32 object-contain relative z-10"
-                animate={{
-                  y: [0, -15, 0]
-                }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
               />
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* Main Heading */}
