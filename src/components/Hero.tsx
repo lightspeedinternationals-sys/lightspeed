@@ -84,9 +84,9 @@ const Hero = () => {
             <div className="relative">
               {/* Pulsing glow ring behind logo */}
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 via-secondary/40 to-primary/30 blur-2xl"
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 via-secondary/40 to-primary/30 blur-3xl"
                 animate={{
-                  scale: [1, 1.5, 1],
+                  scale: [1, 1.8, 1],
                   opacity: [0.4, 0.7, 0.4],
                   rotate: [0, 180, 360]
                 }}
@@ -94,13 +94,24 @@ const Hero = () => {
                 style={{ width: "160px", height: "160px", margin: "-16px" }}
               />
               <motion.div
-                className="absolute inset-0 rounded-full bg-secondary/20 blur-3xl"
+                className="absolute inset-0 rounded-full bg-secondary/20 blur-[100px]"
                 animate={{
                   scale: [1.2, 1, 1.2],
                   opacity: [0.3, 0.6, 0.3]
                 }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 style={{ width: "180px", height: "180px", margin: "-26px" }}
+              />
+              {/* New Energy Layer */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-gradient-to-tr from-gold/20 to-transparent blur-2xl"
+                animate={{
+                  scale: [0.8, 1.4, 0.8],
+                  rotate: [360, 0],
+                  opacity: [0.2, 0.5, 0.2]
+                }}
+                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                style={{ width: "200px", height: "200px", margin: "-36px" }}
               />
               <motion.img
                 src={lightSpeedLogo}
