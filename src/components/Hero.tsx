@@ -81,53 +81,27 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="relative">
-              {/* Pulsing glow ring behind logo */}
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 via-secondary/40 to-primary/30 blur-3xl"
-                animate={{
-                  scale: [1, 1.8, 1],
-                  opacity: [0.4, 0.7, 0.4],
-                  rotate: [0, 180, 360]
-                }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                style={{ width: "160px", height: "160px", margin: "-16px" }}
-              />
-              <motion.div
-                className="absolute inset-0 rounded-full bg-secondary/20 blur-[100px]"
-                animate={{
-                  scale: [1.2, 1, 1.2],
-                  opacity: [0.3, 0.6, 0.3]
-                }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                style={{ width: "180px", height: "180px", margin: "-26px" }}
-              />
-              {/* New Energy Layer */}
-              <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-tr from-gold/20 to-transparent blur-2xl"
-                animate={{
-                  scale: [0.8, 1.4, 0.8],
-                  rotate: [360, 0],
-                  opacity: [0.2, 0.5, 0.2]
-                }}
-                transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                style={{ width: "200px", height: "200px", margin: "-36px" }}
-              />
+            {/* Logo with Slide-in and Float animation */}
+            <motion.div
+              className="relative"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+            >
               <motion.img
                 src={lightSpeedLogo}
                 alt="Light Speed Logo"
                 className="w-32 h-32 object-contain relative z-10"
                 animate={{
-                  y: [0, -12, 0],
-                  filter: [
-                    "drop-shadow(0 0 25px rgba(245,208,138,0.5)) drop-shadow(0 0 50px rgba(230,57,70,0.3))",
-                    "drop-shadow(0 0 45px rgba(245,208,138,0.9)) drop-shadow(0 0 70px rgba(230,57,70,0.5))",
-                    "drop-shadow(0 0 25px rgba(245,208,138,0.5)) drop-shadow(0 0 50px rgba(230,57,70,0.3))"
-                  ]
+                  y: [0, -15, 0]
                 }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
               />
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Main Heading */}
