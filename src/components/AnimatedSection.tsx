@@ -1,5 +1,5 @@
-import { motion, useInView } from "framer-motion";
-import { ReactNode, useRef } from "react";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 
 interface AnimatedSectionProps {
   children: ReactNode;
@@ -9,15 +9,13 @@ interface AnimatedSectionProps {
   once?: boolean;
 }
 
-const AnimatedSection = ({ 
-  children, 
-  className = "", 
+const AnimatedSection = ({
+  children,
+  className = "",
   delay = 0,
   direction = "up",
-  once = true
 }: AnimatedSectionProps) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: "-100px" });
+  // Removed scroll trigger logic
 
   const directions = {
     up: { y: 40, x: 0 },
@@ -28,9 +26,8 @@ const AnimatedSection = ({
 
   return (
     <motion.div
-      ref={ref}
       initial={{ opacity: 0, ...directions[direction] }}
-      animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
+      animate={{ opacity: 1, y: 0, x: 0 }}
       transition={{ duration: 0.6, delay }}
       className={className}
     >

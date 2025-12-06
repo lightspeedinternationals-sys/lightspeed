@@ -66,11 +66,11 @@ ${formData.message || "None"}
       <div className="container-custom">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
-          <motion.div 
+          <motion.div
             className="text-center mb-12 space-y-4"
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            animate={{ opacity: 1, y: 0 }}
+
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -80,22 +80,22 @@ ${formData.message || "None"}
           </motion.div>
 
           {/* Form Card */}
-          <motion.div 
+          <motion.div
             ref={formRef}
             className="card-dark bg-card/80 backdrop-blur-sm"
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <motion.form 
-              onSubmit={handleSubmit} 
+            <motion.form
+              onSubmit={handleSubmit}
               className="space-y-6"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
             >
               {/* Full Name */}
-              <motion.div 
+              <motion.div
                 className="space-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -110,13 +110,14 @@ ${formData.message || "None"}
                   required
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-base md:text-sm p-3 md:p-2"
+
                   placeholder="Enter your full name"
                 />
               </motion.div>
 
               {/* WhatsApp Number */}
-              <motion.div 
+              <motion.div
                 className="space-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -131,13 +132,13 @@ ${formData.message || "None"}
                   required
                   value={formData.whatsappNumber}
                   onChange={(e) => setFormData({ ...formData, whatsappNumber: e.target.value })}
-                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 text-base md:text-sm p-3 md:p-2"
                   placeholder="+91 95666 50409"
                 />
               </motion.div>
 
               {/* Pickup Address */}
-              <motion.div 
+              <motion.div
                 className="space-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -151,13 +152,14 @@ ${formData.message || "None"}
                   required
                   value={formData.pickupAddress}
                   onChange={(e) => setFormData({ ...formData, pickupAddress: e.target.value })}
-                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[80px]"
+                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[80px] text-base md:text-sm p-3 md:p-2"
+
                   placeholder="Enter complete pickup address"
                 />
               </motion.div>
 
               {/* Delivery Address */}
-              <motion.div 
+              <motion.div
                 className="space-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -171,13 +173,14 @@ ${formData.message || "None"}
                   required
                   value={formData.deliveryAddress}
                   onChange={(e) => setFormData({ ...formData, deliveryAddress: e.target.value })}
-                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[80px]"
+                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[80px] text-base md:text-sm p-3 md:p-2"
+
                   placeholder="Enter complete delivery address"
                 />
               </motion.div>
 
               {/* Type of Shipment */}
-              <motion.div 
+              <motion.div
                 className="space-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -200,7 +203,7 @@ ${formData.message || "None"}
               </motion.div>
 
               {/* Message / Notes */}
-              <motion.div 
+              <motion.div
                 className="space-y-2"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -213,7 +216,8 @@ ${formData.message || "None"}
                   id="message"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[100px]"
+                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[100px] text-base md:text-sm p-3 md:p-2"
+
                   placeholder="Any additional information..."
                 />
               </motion.div>
@@ -225,8 +229,8 @@ ${formData.message || "None"}
                 transition={{ duration: 0.4, delay: 0.6 }}
               >
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     className="btn-primary w-full text-lg group"
                     disabled={isSubmitting}
                   >

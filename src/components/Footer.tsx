@@ -8,7 +8,7 @@ const Footer = () => {
   };
 
   const linkVariants = {
-    hover: { 
+    hover: {
       x: 5,
       color: "hsl(354 70% 58%)",
       transition: { duration: 0.2 }
@@ -25,8 +25,8 @@ const Footer = () => {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { duration: 0.5 }
     }
@@ -36,18 +36,18 @@ const Footer = () => {
     <footer className="bg-card border-t border-border">
       <div className="container-custom py-12">
         {/* Logo Section */}
-        <motion.div 
+        <motion.div
           className="flex justify-center mb-8"
           initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, scale: 1 }}
+
           transition={{ duration: 0.5 }}
         >
-          <motion.img 
-            src={lightSpeedLogo} 
-            alt="Light Speed Logo" 
+          <motion.img
+            src={lightSpeedLogo}
+            alt="Light Speed Logo"
             className="w-24 h-24 object-contain"
-            animate={{ 
+            animate={{
               filter: [
                 "drop-shadow(0 0 10px rgba(245,208,138,0.3))",
                 "drop-shadow(0 0 20px rgba(245,208,138,0.5))",
@@ -58,12 +58,12 @@ const Footer = () => {
           />
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid md:grid-cols-4 gap-8 mb-8"
           variants={containerVariants}
           initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
+          animate="visible"
+
         >
           {/* Company */}
           <motion.div className="space-y-4" variants={itemVariants}>
@@ -71,11 +71,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {["About Us", "Careers", "Blog", "Contact"].map((item) => (
                 <li key={item}>
-                  <motion.a 
-                    href="#" 
+                  <motion.a
+                    href="#"
                     className="text-muted-foreground inline-block"
                     variants={linkVariants}
                     whileHover="hover"
+                    whileTap={{ scale: 0.95 }}
+
                   >
                     {item}
                   </motion.a>
@@ -90,11 +92,13 @@ const Footer = () => {
             <ul className="space-y-2">
               {["Track Shipment", "Customer Service", "Shipping Policy", "FAQ"].map((item) => (
                 <li key={item}>
-                  <motion.a 
-                    href="#" 
+                  <motion.a
+                    href="#"
                     className="text-muted-foreground inline-block"
                     variants={linkVariants}
                     whileHover="hover"
+                    whileTap={{ scale: 0.95 }}
+
                   >
                     {item}
                   </motion.a>
@@ -108,22 +112,26 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-foreground">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <motion.button 
-                  onClick={scrollToQuote} 
+                <motion.button
+                  onClick={scrollToQuote}
                   className="text-muted-foreground"
                   variants={linkVariants}
                   whileHover="hover"
+                  whileTap={{ scale: 0.95 }}
+
                 >
                   Request a Quote
                 </motion.button>
               </li>
               {["Services", "Terms & Conditions", "Privacy Policy"].map((item) => (
                 <li key={item}>
-                  <motion.a 
-                    href="#" 
+                  <motion.a
+                    href="#"
                     className="text-muted-foreground inline-block"
                     variants={linkVariants}
                     whileHover="hover"
+                    whileTap={{ scale: 0.95 }}
+
                   >
                     {item}
                   </motion.a>
@@ -136,7 +144,7 @@ const Footer = () => {
           <motion.div className="space-y-4" variants={itemVariants}>
             <h3 className="text-lg font-bold text-foreground">Contact Us</h3>
             <div className="space-y-3">
-              <motion.div 
+              <motion.div
                 className="flex items-start gap-3"
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
@@ -147,7 +155,7 @@ const Footer = () => {
                   <a href="tel:+919566650409" className="text-foreground hover:text-primary transition-colors">+91 95666 50409</a>
                 </div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="flex items-start gap-3"
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
@@ -160,7 +168,7 @@ const Footer = () => {
                   </a>
                 </div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="flex items-start gap-3"
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
@@ -179,11 +187,11 @@ const Footer = () => {
         </motion.div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           className="border-t border-border pt-8 text-center"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1 }}
+
           transition={{ delay: 0.3 }}
         >
           <p className="text-muted-foreground">

@@ -1,20 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import heroBg from "@/assets/hero-bg.png";
 import lightSpeedLogo from "@/assets/light-speed-logo.png";
 
 const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) => {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const hasAnimated = useRef(false);
 
   useEffect(() => {
-    if (!isInView || hasAnimated.current) return;
-    hasAnimated.current = true;
-
     let startTime: number;
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
@@ -24,86 +18,64 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; s
       if (progress < 1) requestAnimationFrame(animate);
     };
     requestAnimationFrame(animate);
-  }, [isInView, end, duration]);
+  }, [end, duration]);
 
-  return <span ref={ref}>{count}{suffix}</span>;
+  return <span>{count}{suffix}</span>;
 };
 
 const Hero = () => {
-  const containerRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
-  
-  // Parallax effect - background moves slower than scroll
-  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-  const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const contentY = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
-
   const scrollToQuote = () => {
     document.getElementById("quote-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="home" ref={containerRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Parallax Background image with fade-in and subtle zoom */}
-      <motion.div 
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image with fade-in */}
+      <motion.div
         className="absolute inset-0 bg-cover bg-center origin-center"
-        style={{ 
+        style={{
           backgroundImage: `url(${heroBg})`,
-          y: backgroundY,
         }}
-        initial={{ scale: 1.2, opacity: 0 }}
-        animate={{ 
-          scale: [1.2, 1.05, 1.08],
-          opacity: 1 
+        initial={{ scale: 1.1, opacity: 0 }}
+        animate={{
+          scale: 1,
+          opacity: 1
         }}
-        transition={{ 
-          opacity: { duration: 1.2, ease: "easeOut" },
-          scale: { 
-            duration: 20, 
-            ease: "easeInOut",
-            repeat: Infinity,
-            repeatType: "reverse"
-          }
+        transition={{
+          duration: 1.5, ease: "easeOut"
         }}
       />
-      
+
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-background/60" />
-      
+
       {/* Animated glow effects */}
-      <motion.div 
+      <motion.div
         className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
-        animate={{ 
+        animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3]
         }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"
-        animate={{ 
+        animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.5, 0.3, 0.5]
         }}
         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <motion.div 
-        className="container-custom relative z-10 text-center px-4"
-        style={{ opacity: contentOpacity, y: contentY }}
-      >
-        <motion.div 
+      <div className="container-custom relative z-10 text-center px-4">
+        <motion.div
           className="max-w-4xl mx-auto space-y-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
         >
           {/* Floating Logo */}
-          <motion.div 
+          <motion.div
             className="flex justify-center mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,11 +102,11 @@ const Hero = () => {
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                 style={{ width: "180px", height: "180px", margin: "-26px" }}
               />
-              <motion.img 
-                src={lightSpeedLogo} 
-                alt="Light Speed Logo" 
+              <motion.img
+                src={lightSpeedLogo}
+                alt="Light Speed Logo"
                 className="w-32 h-32 object-contain relative z-10"
-                animate={{ 
+                animate={{
                   y: [0, -12, 0],
                   filter: [
                     "drop-shadow(0 0 25px rgba(245,208,138,0.5)) drop-shadow(0 0 50px rgba(230,57,70,0.3))",
@@ -148,8 +120,8 @@ const Hero = () => {
           </motion.div>
 
           {/* Main Heading */}
-          <motion.h1 
-            className="text-5xl md:text-7xl font-bold leading-tight"
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
@@ -160,13 +132,13 @@ const Hero = () => {
           </motion.h1>
 
           {/* Sub-heading with typewriter effect */}
-          <motion.h2 
+          <motion.h2
             className="text-2xl md:text-3xl font-semibold text-muted-foreground"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <motion.span 
+            <motion.span
               className="text-primary inline-block"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -174,7 +146,7 @@ const Hero = () => {
             >
               Speed.
             </motion.span>{" "}
-            <motion.span 
+            <motion.span
               className="text-secondary inline-block"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -182,7 +154,7 @@ const Hero = () => {
             >
               Security.
             </motion.span>{" "}
-            <motion.span 
+            <motion.span
               className="text-foreground inline-block"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -193,27 +165,27 @@ const Hero = () => {
           </motion.h2>
 
           {/* Description */}
-          <motion.p 
+          <motion.p
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.45 }}
           >
-            Your trusted logistics partner for domestic & international deliveries. 
-            From express courier services to complete freight management, we ensure 
+            Your trusted logistics partner for domestic & international deliveries.
+            From express courier services to complete freight management, we ensure
             your shipments reach safely — every time.
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="btn-primary group text-lg px-8"
                 onClick={scrollToQuote}
               >
@@ -222,9 +194,9 @@ const Hero = () => {
               </Button>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="btn-outline text-lg px-8"
                 onClick={scrollToQuote}
               >
@@ -234,13 +206,13 @@ const Hero = () => {
           </motion.div>
 
           {/* Trust indicators with animated counters */}
-          <motion.div 
+          <motion.div
             className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.75 }}
           >
-            <motion.div 
+            <motion.div
               className="space-y-2"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -250,7 +222,7 @@ const Hero = () => {
               </div>
               <div className="text-sm text-muted-foreground">Deliveries</div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="space-y-2"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -260,7 +232,7 @@ const Hero = () => {
               </div>
               <div className="text-sm text-muted-foreground">Countries</div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="space-y-2"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
@@ -270,7 +242,7 @@ const Hero = () => {
             </motion.div>
           </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Bottom fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />

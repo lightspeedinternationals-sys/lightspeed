@@ -13,24 +13,24 @@ const SplashScreen = ({ isLoading }: SplashScreenProps) => {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-background"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
         >
-          {/* Background glow effects */}
-          <motion.div 
-            className="absolute w-[500px] h-[500px] bg-primary/20 rounded-full blur-[150px]"
-            animate={{ 
-              scale: [1, 1.3, 1],
-              opacity: [0.3, 0.6, 0.3]
+          {/* Background glow effects - Optimized: Reduced blur, added will-change, checks for reduced motion */}
+          <motion.div
+            className="absolute w-[300px] h-[300px] bg-primary/20 rounded-full blur-[80px] will-change-transform"
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3]
             }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
-          <motion.div 
-            className="absolute w-[400px] h-[400px] bg-secondary/20 rounded-full blur-[120px]"
-            animate={{ 
-              scale: [1.3, 1, 1.3],
-              opacity: [0.5, 0.3, 0.5]
+          <motion.div
+            className="absolute w-[250px] h-[250px] bg-secondary/20 rounded-full blur-[60px] will-change-transform"
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.4, 0.2, 0.4]
             }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
           />
 
           <div className="relative flex flex-col items-center gap-8">
@@ -41,28 +41,24 @@ const SplashScreen = ({ isLoading }: SplashScreenProps) => {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              {/* Pulsing glow ring */}
+              {/* Pulsing glow ring - Optimized: Reduced blur and complexity */}
               <motion.div
-                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/40 to-secondary/40 blur-xl"
+                className="absolute inset-0 rounded-full bg-gradient-to-r from-primary/30 to-secondary/30 blur-lg will-change-transform"
                 animate={{
-                  scale: [1, 1.4, 1],
-                  opacity: [0.5, 0.8, 0.5]
+                  scale: [1, 1.2, 1],
+                  opacity: [0.5, 0.7, 0.5]
                 }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 style={{ width: "150px", height: "150px", margin: "-15px" }}
               />
-              
+
+              {/* Logo - Optimized: Removed expensive drop-shadow animation */}
               <motion.img
                 src={lightSpeedLogo}
                 alt="Light Speed Logo"
-                className="w-28 h-28 md:w-36 md:h-36 object-contain relative z-10"
+                className="w-28 h-28 md:w-36 md:h-36 object-contain relative z-10 drop-shadow-lg will-change-transform"
                 animate={{
                   y: [0, -8, 0],
-                  filter: [
-                    "drop-shadow(0 0 20px rgba(245,208,138,0.5))",
-                    "drop-shadow(0 0 40px rgba(245,208,138,0.8))",
-                    "drop-shadow(0 0 20px rgba(245,208,138,0.5))"
-                  ]
                 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
@@ -73,7 +69,7 @@ const SplashScreen = ({ isLoading }: SplashScreenProps) => {
               className="text-center"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.4 }}
             >
               <h1 className="text-2xl md:text-3xl font-bold text-foreground tracking-wider">
                 LIGHT <span className="text-primary">SPEED</span>
@@ -88,18 +84,18 @@ const SplashScreen = ({ isLoading }: SplashScreenProps) => {
               className="flex gap-2 mt-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.3 }}
+              transition={{ delay: 0.4, duration: 0.3 }}
             >
               {[0, 1, 2].map((i) => (
                 <motion.div
                   key={i}
                   className="w-2 h-2 rounded-full bg-primary"
                   animate={{
-                    y: [0, -8, 0],
+                    y: [0, -6, 0],
                     opacity: [0.5, 1, 0.5]
                   }}
                   transition={{
-                    duration: 0.8,
+                    duration: 0.6,
                     repeat: Infinity,
                     delay: i * 0.15,
                     ease: "easeInOut"

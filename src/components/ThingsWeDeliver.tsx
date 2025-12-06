@@ -18,11 +18,11 @@ const ThingsWeDeliver = () => {
   return (
     <section className="section-padding bg-muted/20">
       <div className="container-custom">
-        <motion.div 
+        <motion.div
           className="text-center mb-12 space-y-4"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
+
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -33,7 +33,7 @@ const ThingsWeDeliver = () => {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           ref={ref}
           className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
           initial={{ opacity: 0 }}
@@ -45,16 +45,17 @@ const ThingsWeDeliver = () => {
               initial={{ opacity: 0, y: 30, scale: 0.9 }}
               animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              whileHover={{ 
-                scale: 1.08, 
+              whileHover={{
+                scale: 1.08,
                 y: -8,
                 boxShadow: "0 15px 30px rgba(230, 57, 70, 0.12)"
               }}
+              whileTap={{ scale: 0.95 }}
               className="card-dark text-center space-y-3 cursor-pointer"
             >
-              <motion.div 
+              <motion.div
                 className="flex justify-center text-primary"
-                whileHover={{ 
+                whileHover={{
                   rotate: [0, -15, 15, 0],
                   scale: 1.15
                 }}

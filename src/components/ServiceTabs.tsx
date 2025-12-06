@@ -59,11 +59,11 @@ const ServiceTabs = () => {
     <section className="section-padding bg-gradient-to-b from-background to-muted/20">
       <div className="container-custom">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="text-center mb-16 space-y-4"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          animate={{ opacity: 1, y: 0 }}
+
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold">
@@ -74,18 +74,18 @@ const ServiceTabs = () => {
             Courier Services | Warehousing | Freight Forwarding | Customized Logistic Solutions
           </p>
           <p className="text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-            We deliver end-to-end logistics solutions designed to support your business growth. 
-            With advanced tracking technology, modern fleets, and a global partner network, 
+            We deliver end-to-end logistics solutions designed to support your business growth.
+            With advanced tracking technology, modern fleets, and a global partner network,
             LIGHT SPEED ensures seamless, timely, and secure transportation of your goods.
           </p>
         </motion.div>
 
         {/* Tabs Navigation */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-2 mb-12"
+        <motion.div
+          className="flex flex-nowrap md:flex-wrap overflow-x-auto pb-4 md:pb-0 justify-start md:justify-center gap-2 mb-12 scrollbar-hide snap-x"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          animate={{ opacity: 1, y: 0 }}
+
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           {services.map((service) => (
@@ -95,10 +95,10 @@ const ServiceTabs = () => {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className={`
-                relative flex items-center gap-2 px-6 py-3 rounded-lg font-semibold
+                relative flex items-center gap-2 px-6 py-3 rounded-lg font-semibold whitespace-nowrap snap-center shrink-0
                 transition-colors duration-300 border-2
-                ${activeTab === service.id 
-                  ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20" 
+                ${activeTab === service.id
+                  ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
                   : "bg-card text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
                 }
               `}
@@ -120,7 +120,7 @@ const ServiceTabs = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <AnimatePresence mode="wait">
-            <motion.div 
+            <motion.div
               key={activeService.id}
               className="space-y-6"
               initial={{ opacity: 0, x: -30 }}
@@ -145,7 +145,7 @@ const ServiceTabs = () => {
 
           {/* Image */}
           <AnimatePresence mode="wait">
-            <motion.div 
+            <motion.div
               key={`${activeService.id}-img`}
               className="relative"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -163,9 +163,9 @@ const ServiceTabs = () => {
                 />
               </div>
               {/* Decorative glow */}
-              <motion.div 
+              <motion.div
                 className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-3xl blur-3xl -z-10"
-                animate={{ 
+                animate={{
                   opacity: [0.3, 0.5, 0.3],
                   scale: [1, 1.02, 1]
                 }}
