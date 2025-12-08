@@ -41,3 +41,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - **Styling**: Tailwind CSS
 - **UI Components**: shadcn-ui
 - **Animations**: Framer Motion, Lottie Web
+# light-speed-animation
