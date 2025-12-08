@@ -1,6 +1,10 @@
+"use client";
+
 import { FileText, Laptop, Pill, UtensilsCrossed, Shirt, ShoppingBag } from "lucide-react";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import LottieAnimation from "@/components/LottieAnimation";
+import deliveryAnim from "@/assets/lottie animation/delivery-boy.json";
 
 const items = [
   { icon: <FileText className="w-8 h-8" />, name: "Documents & Parcels" },
@@ -18,20 +22,37 @@ const ThingsWeDeliver = () => {
   return (
     <section className="section-padding bg-muted/20">
       <div className="container-custom">
-        <motion.div
-          className="text-center mb-12 space-y-4"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+          <motion.div
+            className="text-center lg:text-left space-y-4"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+              Things We Deliver
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto lg:mx-0">
+              We handle a wide range of items with industry-level safety and care.
+              From small parcels to bulk shipments, we ensure everything reaches safely.
+            </p>
+          </motion.div>
 
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground">
-            Things We Deliver
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            We handle a wide range of items with industry-level safety and care:
-          </p>
-        </motion.div>
+          <motion.div
+            className="hidden lg:block w-full max-w-sm mx-auto"
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <LottieAnimation
+              animationData={deliveryAnim}
+              containerId="things-delivery-lottie"
+              className="w-full h-auto"
+            />
+          </motion.div>
+        </div>
 
         <motion.div
           ref={ref}

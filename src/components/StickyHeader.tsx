@@ -1,8 +1,13 @@
+"use client";
+
 import { motion, useScroll, useTransform } from "framer-motion";
+
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import lightSpeedLogo from "@/assets/light-speed-logo.png";
+import Image from "next/image";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -34,25 +39,28 @@ const StickyHeader = () => {
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-lg"
       initial={{ y: -100, opacity: 0 }}
-      animate={{ 
-        y: isVisible ? 0 : -100, 
-        opacity: isVisible ? 1 : 0 
+      animate={{
+        y: isVisible ? 0 : -100,
+        opacity: isVisible ? 1 : 0
       }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       <div className="container-custom px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <motion.div 
+          <motion.div
             className="flex items-center gap-3 cursor-pointer"
             whileHover={{ scale: 1.02 }}
             onClick={() => scrollToSection("#home")}
           >
-            <img 
-              src={lightSpeedLogo} 
-              alt="Light Speed Logo" 
-              className="w-10 h-10 object-contain"
-            />
+            <div className="relative w-10 h-10">
+              <Image
+                src={lightSpeedLogo}
+                alt="Light Speed Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
             <span className="font-bold text-lg text-foreground hidden sm:block">
               Light<span className="text-primary">Speed</span>
             </span>
@@ -75,7 +83,7 @@ const StickyHeader = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
-            <motion.a 
+            <motion.a
               href="tel:+919566650409"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
               whileHover={{ scale: 1.05 }}
@@ -84,8 +92,8 @@ const StickyHeader = () => {
               <span className="text-sm">+91 95666 50409</span>
             </motion.a>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }}>
-              <Button 
-                size="sm" 
+              <Button
+                size="sm"
                 className="btn-primary"
                 onClick={() => scrollToSection("#quote-section")}
               >
@@ -109,7 +117,7 @@ const StickyHeader = () => {
       <motion.div
         className="md:hidden overflow-hidden bg-background/98 border-t border-border/50"
         initial={false}
-        animate={{ 
+        animate={{
           height: isMobileMenuOpen ? "auto" : 0,
           opacity: isMobileMenuOpen ? 1 : 0
         }}
@@ -122,9 +130,9 @@ const StickyHeader = () => {
               onClick={() => scrollToSection(link.href)}
               className="block w-full text-left py-2 text-muted-foreground hover:text-foreground transition-colors"
               initial={{ x: -20, opacity: 0 }}
-              animate={{ 
-                x: isMobileMenuOpen ? 0 : -20, 
-                opacity: isMobileMenuOpen ? 1 : 0 
+              animate={{
+                x: isMobileMenuOpen ? 0 : -20,
+                opacity: isMobileMenuOpen ? 1 : 0
               }}
               transition={{ delay: index * 0.05 }}
             >
@@ -133,13 +141,13 @@ const StickyHeader = () => {
           ))}
           <motion.div
             initial={{ x: -20, opacity: 0 }}
-            animate={{ 
-              x: isMobileMenuOpen ? 0 : -20, 
-              opacity: isMobileMenuOpen ? 1 : 0 
+            animate={{
+              x: isMobileMenuOpen ? 0 : -20,
+              opacity: isMobileMenuOpen ? 1 : 0
             }}
             transition={{ delay: navLinks.length * 0.05 }}
           >
-            <Button 
+            <Button
               className="btn-primary w-full mt-2"
               onClick={() => scrollToSection("#quote-section")}
             >

@@ -1,5 +1,8 @@
+"use client";
+
 import { Phone, Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import lightSpeedLogo from "@/assets/light-speed-logo.png";
 
 const Footer = () => {
@@ -43,10 +46,8 @@ const Footer = () => {
 
           transition={{ duration: 0.5 }}
         >
-          <motion.img
-            src={lightSpeedLogo}
-            alt="Light Speed Logo"
-            className="w-24 h-24 object-contain"
+          <motion.div
+            className="relative w-24 h-24"
             animate={{
               filter: [
                 "drop-shadow(0 0 10px rgba(245,208,138,0.3))",
@@ -55,7 +56,14 @@ const Footer = () => {
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
-          />
+          >
+            <Image
+              src={lightSpeedLogo}
+              alt="Light Speed Logo"
+              fill
+              className="object-contain"
+            />
+          </motion.div>
         </motion.div>
 
         <motion.div

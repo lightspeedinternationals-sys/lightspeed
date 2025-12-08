@@ -1,11 +1,16 @@
+"use client";
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Truck, Warehouse, Ship, Settings } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import courierImg from "@/assets/courier.png";
-import containerImg from "@/assets/container.png";
-import flightImg from "@/assets/flight.png";
-import logisImg from "@/assets/logis-solution.png";
+import LottieAnimation from "@/components/LottieAnimation";
+
+// Animations
+import courierAnim from "@/assets/lottie animation/Delivery car logistic.json";
+import warehouseAnim from "@/assets/lottie animation/ecommerce order fulfillment automation.json";
+import freightAnim from "@/assets/lottie animation/world wide shipment, e-commerce platform, international commerce and shipping, e-commerce (1).json";
+import customAnim from "@/assets/lottie animation/Logistics.json";
 
 interface ServiceTab {
   id: string;
@@ -13,7 +18,7 @@ interface ServiceTab {
   icon: React.ReactNode;
   title: string;
   description: string;
-  image: string;
+  animation: any;
 }
 
 const services: ServiceTab[] = [
@@ -23,7 +28,7 @@ const services: ServiceTab[] = [
     icon: <Truck className="w-5 h-5" />,
     title: "Courier Service",
     description: "Our courier services are designed to deliver your packages quickly, safely, and reliably. Whether it's documents, parcels, or sensitive items, we ensure timely delivery with real-time tracking and a professional handling process. With domestic and international coverage, we make sure your shipment reaches anywhere with confidence.",
-    image: courierImg,
+    animation: courierAnim,
   },
   {
     id: "warehousing",
@@ -31,7 +36,7 @@ const services: ServiceTab[] = [
     icon: <Warehouse className="w-5 h-5" />,
     title: "Warehousing",
     description: "Our secure and modern warehousing facilities provide safe storage for your goods with 24/7 surveillance, monitored inventory, and climate-controlled options. Whether you need short-term storage or long-term inventory management, our systems help your business maintain smooth, uninterrupted operations.",
-    image: containerImg,
+    animation: warehouseAnim,
   },
   {
     id: "freight",
@@ -39,7 +44,7 @@ const services: ServiceTab[] = [
     icon: <Ship className="w-5 h-5" />,
     title: "Freight Forwarding",
     description: "We offer end-to-end freight forwarding solutions across sea, air, and surface transportation. From international cargo movement to customs clearance and documentation, our global partner network ensures smooth and efficient logistics for all your large-scale shipments.",
-    image: flightImg,
+    animation: freightAnim,
   },
   {
     id: "customized",
@@ -47,7 +52,7 @@ const services: ServiceTab[] = [
     icon: <Settings className="w-5 h-5" />,
     title: "Customized Logistic Solutions",
     description: "Every business has unique logistics needs. We create tailor-made logistics workflows designed around your products, your customers, and your goals. From fragile items to bulk shipments, our personalized approach ensures precision, speed, and reliability for all your logistics challenges.",
-    image: logisImg,
+    animation: customAnim,
   },
 ];
 
@@ -153,13 +158,11 @@ const ServiceTabs = () => {
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="aspect-square rounded-2xl overflow-hidden border-2 border-border bg-muted/20 p-8">
-                <motion.img
-                  src={activeService.image}
-                  alt={activeService.title}
-                  className="w-full h-full object-contain drop-shadow-2xl"
-                  whileHover={{ scale: 1.08 }}
-                  transition={{ duration: 0.4 }}
+              <div className="aspect-square rounded-2xl overflow-hidden border-2 border-border bg-card/50 p-4 flex items-center justify-center">
+                <LottieAnimation
+                  animationData={activeService.animation}
+                  containerId={`service-${activeService.id}`}
+                  className="w-full h-full"
                 />
               </div>
               {/* Decorative glow */}

@@ -1,5 +1,8 @@
+"use client";
+
 import { Check } from "lucide-react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
 import cartImg from "@/assets/cart.png";
 import containerImg from "@/assets/container.png";
@@ -56,34 +59,38 @@ const ServiceItem = ({ service, index }: { service: typeof services[0]; index: n
   return (
     <motion.div
       ref={ref}
-      className={`grid md:grid-cols-2 gap-12 items-center ${
-        service.reverse ? "md:flex-row-reverse" : ""
-      }`}
+      className={`grid md:grid-cols-2 gap-12 items-center ${service.reverse ? "md:flex-row-reverse" : ""
+        }`}
     >
       {/* Image */}
-      <motion.div 
+      <motion.div
         className={`${service.reverse ? "md:order-2" : ""}`}
         initial={{ opacity: 0, x: service.reverse ? 50 : -50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 0.7 }}
       >
         <div className="relative">
-          <motion.div 
+          <motion.div
             className="aspect-square rounded-2xl overflow-hidden border border-border bg-muted/20 p-8"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
-            <motion.img
-              src={service.image}
-              alt={service.title}
-              className="w-full h-full object-contain drop-shadow-2xl"
+            <motion.div
+              className="w-full h-full relative"
               whileHover={{ scale: 1.08 }}
               transition={{ duration: 0.5 }}
-            />
+            >
+              <Image
+                src={service.image}
+                alt={service.title}
+                fill
+                className="object-contain drop-shadow-2xl"
+              />
+            </motion.div>
           </motion.div>
-          <motion.div 
+          <motion.div
             className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl blur-3xl -z-10"
-            animate={{ 
+            animate={{
               opacity: [0.4, 0.6, 0.4],
               scale: [1, 1.02, 1]
             }}
@@ -93,7 +100,7 @@ const ServiceItem = ({ service, index }: { service: typeof services[0]; index: n
       </motion.div>
 
       {/* Content */}
-      <motion.div 
+      <motion.div
         className={`space-y-6 ${service.reverse ? "md:order-1" : ""}`}
         initial={{ opacity: 0, x: service.reverse ? -50 : 50 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -110,14 +117,14 @@ const ServiceItem = ({ service, index }: { service: typeof services[0]; index: n
 
         <div className="space-y-3">
           {service.features.map((feature, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               className="flex items-start gap-3"
               initial={{ opacity: 0, x: -20 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.3 + idx * 0.1 }}
             >
-              <motion.div 
+              <motion.div
                 className="mt-1 flex-shrink-0"
                 whileHover={{ scale: 1.2, rotate: 360 }}
                 transition={{ duration: 0.4 }}

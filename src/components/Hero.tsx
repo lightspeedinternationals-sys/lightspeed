@@ -1,5 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+
+import { ArrowRight, ChevronRight, Package, Truck, Globe, Clock } from "lucide-react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import heroBg from "@/assets/hero-bg.png";
@@ -30,24 +34,32 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background image with fade-in */}
+      {/* Background image with fade-in and zoom loop */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center origin-center"
         style={{
-          backgroundImage: `url(${heroBg})`,
+          backgroundImage: `url(${heroBg.src})`,
         }}
-        initial={{ scale: 1.1, opacity: 0 }}
+        initial={{ scale: 1, opacity: 0 }}
         animate={{
-          scale: 1,
+          scale: [1, 1.05, 1],
           opacity: 1
         }}
         transition={{
-          duration: 1.5, ease: "easeOut"
+          scale: {
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          },
+          opacity: {
+            duration: 1.5,
+            ease: "easeOut"
+          }
         }}
       />
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-background/60" />
+      {/* Dark gradient overlay for premium readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background/80" />
 
       {/* Animated glow effects */}
       <motion.div
@@ -81,19 +93,33 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {/* Static Logo with Subtle Glow */}
-            <div className="relative flex justify-center items-center">
-              {/* Static subtle glow */}
-              <div
-                className="absolute inset-0 bg-primary/20 blur-[60px] rounded-full"
-                style={{ transform: "scale(1.5)" }}
-              />
-              <img
-                src={lightSpeedLogo}
-                alt="Light Speed Logo"
-                className="w-32 h-32 object-contain relative z-10"
-              />
-            </div>
+            {/* Combined Static Glow & Motion Animation */}
+            <motion.div
+              className="relative"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+            >
+              <motion.div
+                className="relative flex justify-center items-center"
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              >
+                {/* Static subtle glow (moves with logo but doesn't pulse) */}
+                <div
+                  className="absolute inset-0 bg-primary/20 blur-[60px] rounded-full"
+                  style={{ transform: "scale(1.5)" }}
+                />
+                <div className="relative w-32 h-32 z-10">
+                  <Image
+                    src={lightSpeedLogo}
+                    alt="Light Speed Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </motion.div>
+            </motion.div>
           </motion.div>
 
           {/* Main Heading */}

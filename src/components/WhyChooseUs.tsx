@@ -1,26 +1,34 @@
-import { Zap, Package, MapPin, Home } from "lucide-react";
+"use client";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+// Assets
+import boxImg from "@/assets/box.png";
+import courierImg from "@/assets/courier.png";
+import trackingImg from "@/assets/shipping-container.png"; // Using container for tracking/shipment
+import affordableImg from "@/assets/container.png"; // Using container for bulk/affordable
 
 const features = [
   {
-    icon: <Zap className="w-10 h-10" />,
-    title: "Fast & Safe Delivery",
-    description: "Lightning-fast delivery times with secure handling protocols",
+    title: "Affordable Rates",
+    description: "We offer competitive pricing without compromising on service quality.",
+    image: affordableImg,
   },
   {
-    icon: <Package className="w-10 h-10" />,
     title: "Professional Packaging",
-    description: "Industry-standard packaging materials and techniques",
+    description: "Your cargo is packed with precision and care to ensure safe delivery.",
+    image: boxImg,
   },
   {
-    icon: <MapPin className="w-10 h-10" />,
     title: "Easy Tracking",
-    description: "Real-time shipment tracking with live updates",
+    description: "Track your shipment in real-time with our intuitive dashboard.",
+    image: trackingImg,
   },
   {
-    icon: <Home className="w-10 h-10" />,
-    title: "Free Door Pickup",
-    description: "Complimentary pickup service from your doorstep",
+    title: "Free Door Pickups",
+    description: "We pick up your packages from your doorstep at no extra cost.",
+    image: courierImg,
   },
 ];
 
@@ -38,6 +46,9 @@ const WhyChooseUs = () => {
             <span className="text-foreground">Why Choose </span>
             <span className="heading-gradient">LIGHT SPEED</span>
           </h2>
+          <p className="mb-10 text-muted-foreground text-lg max-w-2xl mx-auto">
+            We don’t just move cargo – we deliver peace of mind. Here’s what sets us apart from other logistics providers in the industry.
+          </p>
         </motion.div>
 
         <motion.div
@@ -56,17 +67,24 @@ const WhyChooseUs = () => {
                 y: -10,
                 boxShadow: "0 20px 40px rgba(230, 57, 70, 0.15)"
               }}
-              className="card-dark text-center space-y-4 group cursor-pointer"
+              className="card-dark text-center space-y-4 group cursor-pointer p-6 rounded-xl bg-card border border-border/50 hover:border-primary/50 transition-colors"
             >
               <motion.div
-                className="flex justify-center text-primary"
+                className="flex justify-center mb-4"
                 whileHover={{
-                  scale: 1.2,
-                  rotate: [0, -10, 10, 0]
+                  scale: 1.1,
+                  rotate: [0, -5, 5, 0]
                 }}
                 transition={{ duration: 0.4 }}
               >
-                {feature.icon}
+                <div className="relative w-20 h-20">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </motion.div>
               <h3 className="text-xl font-bold text-foreground">
                 {feature.title}

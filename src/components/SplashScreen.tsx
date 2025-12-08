@@ -1,4 +1,7 @@
+"use client";
+
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import lightSpeedLogo from "@/assets/light-speed-logo.png";
 
 interface SplashScreenProps {
@@ -53,15 +56,20 @@ const SplashScreen = ({ isLoading }: SplashScreenProps) => {
               />
 
               {/* Logo - Optimized: Removed expensive drop-shadow animation */}
-              <motion.img
-                src={lightSpeedLogo}
-                alt="Light Speed Logo"
-                className="w-28 h-28 md:w-36 md:h-36 object-contain relative z-10 drop-shadow-lg will-change-transform"
+              <motion.div
+                className="relative w-28 h-28 md:w-36 md:h-36 z-10 drop-shadow-lg will-change-transform"
                 animate={{
                   y: [0, -8, 0],
                 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
+              >
+                <Image
+                  src={lightSpeedLogo}
+                  alt="Light Speed Logo"
+                  fill
+                  className="object-contain"
+                />
+              </motion.div>
             </motion.div>
 
             {/* Brand name */}

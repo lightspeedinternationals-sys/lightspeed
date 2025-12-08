@@ -67,6 +67,14 @@ export default {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-33.33%)" },
         },
+        "marquee-left": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        "marquee-right": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
+        },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
@@ -99,6 +107,8 @@ export default {
         "slide-up": "slide-up 0.6s ease-out forwards",
         "glow": "glow 2s ease-in-out infinite alternate",
         marquee: "marquee 25s linear infinite",
+        "marquee-left": "marquee-left 30s linear infinite",
+        "marquee-right": "marquee-right 30s linear infinite",
         float: "float 3s ease-in-out infinite",
         "fade-up": "fade-up 0.6s ease-out forwards",
         "scale-in": "scale-in 0.4s ease-out forwards",

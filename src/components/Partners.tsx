@@ -1,4 +1,7 @@
+"use client";
+
 import { motion } from "framer-motion";
+import Image from "next/image";
 import fedexLogo from "@/assets/partners/fedex.png";
 import dhlLogo from "@/assets/partners/dhl.png";
 import dtdcLogo from "@/assets/partners/dtdc.png";
@@ -58,7 +61,7 @@ const Partners = () => {
               whileTap={{ scale: 0.95 }}
               transition={{ duration: 0.3 }}
             >
-              <img
+              <Image
                 src={partner.logo}
                 alt={`${partner.name} logo`}
                 className="max-w-full max-h-20 object-contain grayscale group-hover:grayscale-0 transition-all duration-500"

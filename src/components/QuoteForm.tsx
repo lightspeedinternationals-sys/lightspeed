@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,6 +9,8 @@ import { Send, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import LottieAnimation from "@/components/LottieAnimation";
+import logisticsAnimation from "@/assets/lottie animation/Logistics.json";
 
 const QuoteForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -62,15 +66,12 @@ ${formData.message || "None"}
   };
 
   return (
-    <section id="quote-section" className="section-padding bg-background">
-      <div className="container-custom">
-        <div className="max-w-3xl mx-auto">
-          {/* Header */}
+    <section id="quote-section" className="section-padding bg-background relative overflow-hidden">
+      <div className="container-custom relative z-10">
+        <div className="text-center mb-12 space-y-4">
           <motion.div
-            className="text-center mb-12 space-y-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-foreground">
@@ -78,11 +79,28 @@ ${formData.message || "None"}
             </h2>
             <p className="text-xl text-primary font-semibold">Get in Touch With Us!</p>
           </motion.div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Animation */}
+          <motion.div
+            className="hidden lg:block w-full max-w-lg mx-auto"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <LottieAnimation
+              animationData={logisticsAnimation}
+              containerId="logistics-lottie"
+              className="w-full h-auto"
+            />
+          </motion.div>
 
           {/* Form Card */}
           <motion.div
             ref={formRef}
-            className="card-dark bg-card/80 backdrop-blur-sm"
+            className="card-dark bg-card/80 backdrop-blur-sm w-full"
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.6 }}
