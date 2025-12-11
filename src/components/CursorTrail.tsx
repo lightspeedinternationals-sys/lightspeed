@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Point {
@@ -14,10 +14,10 @@ const CursorTrail = () => {
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            setPoints((prev) => [
-                ...prev.slice(-20), // Keep last 20 points
-                { x: e.clientX, y: e.clientY, id: Date.now() },
-            ]);
+            setPoints((prev) => {
+                const newPoint = { x: e.clientX, y: e.clientY, id: Date.now() + Math.random() };
+                return [...prev.slice(-20), newPoint];
+            });
         };
 
         window.addEventListener("mousemove", handleMouseMove);

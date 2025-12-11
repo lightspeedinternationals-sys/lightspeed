@@ -9,6 +9,9 @@ import { cn } from "@/lib/utils";
 import lightSpeedLogo from "@/assets/light-speed-logo.png";
 import Image from "next/image";
 
+
+import { BackgroundToggle } from "@/components/BackgroundToggle";
+
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Services", href: "#services" },
@@ -83,6 +86,7 @@ const StickyHeader = () => {
 
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
+            <BackgroundToggle />
             <motion.a
               href="tel:+919566650409"
               className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
@@ -147,17 +151,31 @@ const StickyHeader = () => {
             }}
             transition={{ delay: navLinks.length * 0.05 }}
           >
-            <Button
-              className="btn-primary w-full mt-2"
-              onClick={() => scrollToSection("#quote-section")}
-            >
-              Get Quote
-            </Button>
+            <div className="flex flex-col gap-4 mt-4">
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-medium text-muted-foreground">Background Theme</span>
+                <BackgroundToggle />
+              </div>
+              <Button
+                className="btn-primary w-full"
+                onClick={() => scrollToSection("#quote-section")}
+              >
+                Get Quote
+              </Button>
+            </div>
           </motion.div>
         </nav>
       </motion.div>
-    </motion.header>
+
+
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="absolute bottom-0 left-0 h-[2px] bg-primary origin-left z-50"
+        style={{ scaleX: useScroll().scrollYProgress, width: "100%" }}
+      />
+    </motion.header >
   );
 };
 
 export default StickyHeader;
+

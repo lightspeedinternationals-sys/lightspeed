@@ -11,6 +11,8 @@ import StickyHeader from "@/components/StickyHeader";
 import Testimonials from "@/components/Testimonials";
 import CursorFollower from "@/components/CursorFollower";
 import BackgroundAnimation from "@/components/BackgroundAnimation";
+import FAQ from "@/components/FAQ";
+import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
@@ -26,7 +28,9 @@ const Index = () => {
       <WhyChooseUs />
       <AboutUs />
       <Testimonials />
+      <FAQ />
       <Partners />
+      <ContactSection />
       <Footer />
     </div>
   );

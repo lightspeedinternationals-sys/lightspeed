@@ -11,6 +11,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import LottieAnimation from "@/components/LottieAnimation";
 import logisticsAnimation from "@/assets/lottie animation/Logistics.json";
+import AddressInput from "@/components/AddressInput";
 
 const QuoteForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -74,7 +75,7 @@ ${formData.message || "None"}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Request a Quote
             </h2>
             <p className="text-xl text-primary font-semibold">Get in Touch With Us!</p>
@@ -100,7 +101,7 @@ ${formData.message || "None"}
           {/* Form Card */}
           <motion.div
             ref={formRef}
-            className="card-dark bg-card/80 backdrop-blur-sm w-full"
+            className="w-full bg-white rounded-2xl shadow-xl border border-gray-100 p-8"
             initial={{ opacity: 0, y: 40, scale: 0.98 }}
             animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
             transition={{ duration: 0.6 }}
@@ -119,7 +120,7 @@ ${formData.message || "None"}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4 }}
               >
-                <label htmlFor="fullName" className="text-sm font-medium text-foreground">
+                <label htmlFor="fullName" className="text-sm font-medium text-gray-700">
                   Full Name <span className="text-primary">*</span>
                 </label>
                 <Input
@@ -141,7 +142,7 @@ ${formData.message || "None"}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.1 }}
               >
-                <label htmlFor="whatsappNumber" className="text-sm font-medium text-foreground">
+                <label htmlFor="whatsappNumber" className="text-sm font-medium text-gray-700">
                   WhatsApp Number <span className="text-primary">*</span>
                 </label>
                 <Input
@@ -162,17 +163,13 @@ ${formData.message || "None"}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.2 }}
               >
-                <label htmlFor="pickupAddress" className="text-sm font-medium text-foreground">
-                  Pickup Address <span className="text-primary">*</span>
-                </label>
-                <Textarea
+                <AddressInput
                   id="pickupAddress"
+                  label="Pickup Address"
                   required
                   value={formData.pickupAddress}
-                  onChange={(e) => setFormData({ ...formData, pickupAddress: e.target.value })}
-                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[80px] text-base md:text-sm p-3 md:p-2"
-
-                  placeholder="Enter complete pickup address"
+                  onChange={(value) => setFormData({ ...formData, pickupAddress: value })}
+                  placeholder="Enter complete pickup address (Start typing for suggestions)"
                 />
               </motion.div>
 
@@ -183,17 +180,13 @@ ${formData.message || "None"}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.3 }}
               >
-                <label htmlFor="deliveryAddress" className="text-sm font-medium text-foreground">
-                  Delivery Address <span className="text-primary">*</span>
-                </label>
-                <Textarea
+                <AddressInput
                   id="deliveryAddress"
+                  label="Delivery Address"
                   required
                   value={formData.deliveryAddress}
-                  onChange={(e) => setFormData({ ...formData, deliveryAddress: e.target.value })}
-                  className="bg-muted border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300 min-h-[80px] text-base md:text-sm p-3 md:p-2"
-
-                  placeholder="Enter complete delivery address"
+                  onChange={(value) => setFormData({ ...formData, deliveryAddress: value })}
+                  placeholder="Enter complete delivery address (Start typing for suggestions)"
                 />
               </motion.div>
 
@@ -204,7 +197,7 @@ ${formData.message || "None"}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.4 }}
               >
-                <label htmlFor="shipmentType" className="text-sm font-medium text-foreground">
+                <label htmlFor="shipmentType" className="text-sm font-medium text-gray-700">
                   Type of Shipment
                 </label>
                 <Select value={formData.shipmentType} onValueChange={(value) => setFormData({ ...formData, shipmentType: value })}>
@@ -227,7 +220,7 @@ ${formData.message || "None"}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
-                <label htmlFor="message" className="text-sm font-medium text-foreground">
+                <label htmlFor="message" className="text-sm font-medium text-gray-700">
                   Message / Notes
                 </label>
                 <Textarea
@@ -259,7 +252,7 @@ ${formData.message || "None"}
                       </>
                     ) : (
                       <>
-                        Submit Request
+                        Request Quota
                         <Send className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                       </>
                     )}

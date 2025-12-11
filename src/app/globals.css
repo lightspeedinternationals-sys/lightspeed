@@ -8,40 +8,96 @@ All colors MUST be HSL.
 
 @layer base {
     :root {
-        --background: 0 0% 6.5%;
-        --foreground: 0 0% 98%;
+        /* Light Theme */
+        --background: 0 0% 100%;
+        --foreground: 222.2 84% 4.9%;
 
-        --card: 0 0% 8%;
-        --card-foreground: 0 0% 98%;
+        --card: 0 0% 100%;
+        --card-foreground: 222.2 84% 4.9%;
 
-        --popover: 0 0% 8%;
-        --popover-foreground: 0 0% 98%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 222.2 84% 4.9%;
 
         --primary: 354 70% 58%;
-        --primary-foreground: 0 0% 100%;
+        --primary-foreground: 210 40% 98%;
 
-        --secondary: 43 50% 78%;
-        --secondary-foreground: 0 0% 10%;
+        --secondary: 43 80% 45%; /* Darker Gold for visibility on white */
+        --secondary-foreground: 222.2 47.4% 11.2%;
 
-        --muted: 0 0% 15%;
-        --muted-foreground: 0 0% 65%;
+        --muted: 210 40% 96.1%;
+        --muted-foreground: 215.4 16.3% 46.9%;
 
-        --accent: 354 70% 58%;
-        --accent-foreground: 0 0% 100%;
+        --accent: 210 40% 96.1%;
+        --accent-foreground: 222.2 47.4% 11.2%;
 
         --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
+        --destructive-foreground: 210 40% 98%;
 
-        --border: 0 0% 20%;
-        --input: 0 0% 20%;
-        --ring: 354 70% 58%;
+        --border: 214.3 31.8% 91.4%;
+        --input: 214.3 31.8% 91.4%;
+        --ring: 222.2 84% 4.9%;
 
         --radius: 0.75rem;
 
-        --hero-glow: 354 70% 58%;
-        --gold: 43 50% 78%;
+        --hero-glow: 354 70% 58%; /* Adjusted to Primary Red for glow */
+        --gold: 43 80% 45%;
 
         --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Primary Colors Overrides (Optional - keeping them allows toggle usage but Default is now Blue Glass) */
+    
+    [data-theme='light'] {
+         /* ... */
+    }
+
+    [data-theme='red'] {
+        --primary: 354 70% 58%;
+        --ring: 354 70% 58%;
+        --hero-glow: 354 70% 58%;
+    }
+
+    [data-theme='blue'] {
+        --primary: 217 91% 60%;
+        --ring: 217 91% 60%;
+        --hero-glow: 217 91% 60%;
+    }
+
+    [data-theme='green'] {
+        --primary: 142 76% 36%;
+        --ring: 142 76% 36%;
+        --hero-glow: 142 76% 36%;
+    }
+
+    [data-theme='orange'] {
+        --primary: 24 94% 53%;
+        --ring: 24 94% 53%;
+        --hero-glow: 24 94% 53%;
+    }
+
+    [data-theme='rose'] {
+        --primary: 343 100% 70%;
+        --ring: 343 100% 70%;
+        --hero-glow: 343 100% 70%;
+    }
+
+    /* Background Theme Overrides */
+    [data-bg-theme='light-gray'] {
+        --background: 0 0% 82.7%; /* #D3D3D3 */
+        --foreground: 0 0% 10%; /* Dark text for contrast */
+        --muted: 0 0% 75%; /* Slightly darker for muted */
+        --card: 0 0% 85%;
+    }
+
+    [data-bg-theme='dark-gray'] {
+        --background: 0 0% 18%; /* #2E2E2E */
+        --foreground: 0 0% 100%; /* White text */
+        --muted: 0 0% 25%;
+        --card: 0 0% 22%;
+        --popover: 0 0% 18%;
+        --popover-foreground: 0 0% 100%;
+        --border: 0 0% 30%;
+        --input: 0 0% 25%;
     }
 }
 
@@ -52,6 +108,10 @@ All colors MUST be HSL.
 
     body {
         @apply bg-background text-foreground;
+        background-attachment: fixed;
+        background-image: 
+            radial-gradient(circle at 50% 0%, rgba(255, 60, 60, 0.1) 0%, transparent 50%),
+            linear-gradient(to bottom, #ffffff, #f1f5f9);
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
@@ -82,7 +142,7 @@ All colors MUST be HSL.
     }
 
     .card-dark {
-        @apply bg-card border border-border rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10;
+        @apply bg-card/80 backdrop-blur-md border border-border/50 rounded-xl p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10;
     }
 
     .section-padding {
@@ -105,6 +165,12 @@ All colors MUST be HSL.
         }
     }
 
+    .text-highlight-re {
+        color: #ff3c3c;
+        font-weight: 800;
+        text-shadow: 0 0 10px rgba(255, 60, 60, 0.5);
+    }
+
     @keyframes zoomIn {
         0% {
             transform: scale(1);
@@ -113,5 +179,57 @@ All colors MUST be HSL.
         100% {
             transform: scale(1.1);
         }
+    }
+
+    /* Flip Card Styles */
+    .myCard {
+        perspective: 1000px;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    .innerCard {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+    }
+
+    @media (hover: hover) {
+        .myCard:hover .innerCard {
+            transform: rotateY(180deg);
+        }
+    }
+
+    .myCard.flipped .innerCard {
+        transform: rotateY(180deg);
+    }
+
+    .frontSide, .backSide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    .frontSide {
+        background-color: white;
+        border: 1px solid #e5e7eb;
+    }
+
+    .backSide {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: white;
+        transform: rotateY(180deg);
+        border: 1px solid #1e293b;
     }
 }

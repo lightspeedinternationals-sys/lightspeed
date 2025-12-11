@@ -42,16 +42,90 @@ __turbopack_context__.s([
     "default",
     ()=>RootLayout,
     "metadata",
-    ()=>metadata
+    ()=>metadata,
+    "viewport",
+    ()=>viewport
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Providers$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/Providers.tsx [app-rsc] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '@/components/JsonLd'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 ;
 ;
 ;
+;
+const viewport = {
+    themeColor: "#0f172a",
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5
+};
 const metadata = {
-    title: "Light Speed Logistics",
-    description: "Fastest way to deliver your goods"
+    metadataBase: new URL("https://lightspeedinternationals.com"),
+    title: {
+        default: "Light Speed Logistics | Fast & Reliable Global Shipping",
+        template: "%s | Light Speed Logistics"
+    },
+    description: "Light Speed Logistics offers fast, secure, and affordable international courier and freight services. Based in Chennai, delivering worldwide.",
+    keywords: [
+        "Logistics",
+        "Courier Service",
+        "International Shipping",
+        "Freight Forwarding",
+        "Chennai Logistics",
+        "Fast Delivery",
+        "Secure Shipping",
+        "Light Speed Internationals"
+    ],
+    authors: [
+        {
+            name: "Light Speed Logistics"
+        }
+    ],
+    creator: "Light Speed Logistics",
+    publisher: "Light Speed Logistics",
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1
+        }
+    },
+    openGraph: {
+        type: "website",
+        locale: "en_US",
+        url: "https://lightspeedinternationals.com",
+        title: "Light Speed Logistics | Global Shipping simplified",
+        description: "Reliable international courier and freight solutions. We pick up from your door and deliver to the world.",
+        siteName: "Light Speed Logistics",
+        images: [
+            {
+                url: "/og-image.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Light Speed Logistics"
+            }
+        ]
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Light Speed Logistics",
+        description: "Fast & Reliable Global Shipping from Chennai.",
+        images: [
+            "/og-image.jpg"
+        ]
+    },
+    alternates: {
+        canonical: "/"
+    },
+    category: "Logistics"
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -59,21 +133,29 @@ function RootLayout({ children }) {
         suppressHydrationWarning: true,
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
             suppressHydrationWarning: true,
+            className: "bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary",
             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Providers$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Providers"], {
-                children: children
-            }, void 0, false, {
+                children: [
+                    children,
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(JsonLd, {}, void 0, false, {
+                        fileName: "[project]/src/app/layout.tsx",
+                        lineNumber: 76,
+                        columnNumber: 21
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/src/app/layout.tsx",
-                lineNumber: 17,
+                lineNumber: 74,
                 columnNumber: 17
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 16,
+            lineNumber: 73,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 15,
+        lineNumber: 72,
         columnNumber: 9
     }, this);
 }

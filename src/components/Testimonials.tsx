@@ -1,5 +1,8 @@
+"use client";
+
 import { Star } from "lucide-react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 // Testimonial Data
 const testimonials = [
@@ -9,7 +12,7 @@ const testimonials = [
         role: "Export Manager, TexStyle India",
         content: "Light Speed has been a game-changer for our international shipments. Their reliability and tracking give us peace of mind.",
         rating: 5,
-        avatar: "https://images.unsplash.com/photo-1603415526960-f7e0328d13e8?q=80&w=256&auto=format&fit=crop"
+        avatar: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&auto=format&fit=crop"
     },
     {
         id: 2,
@@ -66,12 +69,12 @@ const testimonials = [
         role: "Import/Export Owner",
         content: "Customs clearance support and global network make cross-border logistics effortless.",
         rating: 5,
-        avatar: "https://images.unsplash.com/photo-1519340241574-2f2b6478f337?q=80&w=256&auto=format&fit=crop"
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=256&auto=format&fit=crop"
     }
 ];
 
 const TestimonialCard = ({ data }: { data: typeof testimonials[0] }) => (
-    <article className="inline-flex w-[320px] shrink-0 flex-col rounded-2xl border border-neutral-800 bg-neutral-900/80 backdrop-blur-sm p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mx-4">
+    <article className="inline-flex w-[320px] shrink-0 flex-col rounded-2xl border border-border bg-card shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 mx-4">
         <div className="flex items-center gap-4">
             <div className="relative h-12 w-12 flex-shrink-0">
                 <Image
@@ -83,19 +86,19 @@ const TestimonialCard = ({ data }: { data: typeof testimonials[0] }) => (
                 />
             </div>
             <div>
-                <div className="text-white font-semibold">{data.name}</div>
-                <div className="text-neutral-400 text-sm">{data.role}</div>
+                <div className="text-card-foreground font-semibold">{data.name}</div>
+                <div className="text-muted-foreground text-sm">{data.role}</div>
             </div>
         </div>
         <div className="mt-4 flex gap-1" aria-label={`${data.rating} out of 5 stars`}>
             {[...Array(5)].map((_, i) => (
                 <Star
                     key={i}
-                    className={`w-4 h-4 ${i < data.rating ? "text-yellow-400 fill-yellow-400" : "text-neutral-700"}`}
+                    className={`w-4 h-4 ${i < data.rating ? "text-yellow-400 fill-yellow-400" : "text-muted"}`}
                 />
             ))}
         </div>
-        <p className="mt-4 text-neutral-300 text-sm leading-relaxed">
+        <p className="mt-4 text-muted-foreground text-sm leading-relaxed">
             "{data.content}"
         </p>
     </article>
@@ -106,21 +109,27 @@ const Testimonials = () => {
     const row2 = testimonials.slice(4, 8);
 
     return (
-        <section id="testimonials" className="relative overflow-hidden bg-neutral-950 py-24 section-padding">
+        <section id="testimonials" className="relative overflow-hidden bg-muted/30 py-24 section-padding">
             <div className="container-custom">
                 {/* Heading */}
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+                <motion.div
+                    className="text-center mb-16"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
                         What Our <span className="text-primary">Clients Say</span>
                     </h2>
-                    <p className="text-neutral-400 text-lg max-w-2xl mx-auto">
+                    <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
                         Trusted by businesses worldwide. Here’s why they choose LIGHT SPEED.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Gradient edge fades */}
-                <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 h-full w-24 md:w-32 bg-gradient-to-r from-neutral-950 to-transparent z-10"></div>
-                <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-full w-24 md:w-32 bg-gradient-to-l from-neutral-950 to-transparent z-10"></div>
+                <div aria-hidden="true" className="pointer-events-none absolute left-0 top-0 h-full w-24 md:w-32 bg-gradient-to-r from-background to-transparent z-10"></div>
+                <div aria-hidden="true" className="pointer-events-none absolute right-0 top-0 h-full w-24 md:w-32 bg-gradient-to-l from-background to-transparent z-10"></div>
 
                 {/* Row 1: scroll left-to-right (marquee-right) */}
                 <div className="mb-8 overflow-hidden">

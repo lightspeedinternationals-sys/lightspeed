@@ -21,27 +21,27 @@ const BackgroundAnimation = () => {
     // Configuration for floating particles
     const particles = [
         { Icon: Box, color: "text-red-500", size: 24, initialX: "10%", initialY: "20%", duration: 25 },
-        { Icon: Plane, color: "text-white", size: 32, initialX: "80%", initialY: "15%", duration: 30 },
+        { Icon: Plane, color: "text-primary", size: 32, initialX: "80%", initialY: "15%", duration: 30 },
         { Icon: MapPin, color: "text-red-600", size: 28, initialX: "90%", initialY: "70%", duration: 28 },
-        { Icon: Circle, color: "text-neutral-700", size: 16, initialX: "20%", initialY: "80%", duration: 35 },
-        { Icon: Box, color: "text-neutral-600", size: 20, initialX: "50%", initialY: "50%", duration: 40 },
+        { Icon: Circle, color: "text-muted-foreground", size: 16, initialX: "20%", initialY: "80%", duration: 35 },
+        { Icon: Box, color: "text-muted-foreground", size: 20, initialX: "50%", initialY: "50%", duration: 40 },
         { Icon: Plane, color: "text-red-500/50", size: 48, initialX: "5%", initialY: "60%", duration: 45 },
-        { Icon: Circle, color: "text-white/20", size: 12, initialX: "70%", initialY: "30%", duration: 32 },
+        { Icon: Circle, color: "text-primary/20", size: 12, initialX: "70%", initialY: "30%", duration: 32 },
     ];
 
     return (
-        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-neutral-950">
+        <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none bg-transparent">
             {/* Subtle Gradient Glows */}
             <div className="absolute top-0 left-0 w-full h-full opacity-30">
-                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-red-900/20 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-neutral-800/20 rounded-full blur-[120px]" />
+                <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 rounded-full blur-[120px]" />
             </div>
 
             {/* Floating Particles */}
             {particles.map((particle, index) => (
                 <motion.div
                     key={index}
-                    className={`absolute ${particle.color} opacity-10`}
+                    className={`absolute ${particle.color === "text-white" ? "text-primary/20" : particle.color} opacity-40`}
                     initial={{
                         x: particle.initialX,
                         y: particle.initialY,
@@ -69,7 +69,7 @@ const BackgroundAnimation = () => {
             <div
                 className="absolute inset-0 opacity-[0.03]"
                 style={{
-                    backgroundImage: `linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px)`,
+                    backgroundImage: `linear-gradient(#000000 1px, transparent 1px), linear-gradient(90deg, #000000 1px, transparent 1px)`,
                     backgroundSize: '50px 50px'
                 }}
             />

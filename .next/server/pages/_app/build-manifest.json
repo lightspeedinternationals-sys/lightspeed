@@ -7,9 +7,9 @@
   "pages": {
     "/_app": [
       "static/chunks/7332a59fe4d94f58.js",
-      "static/chunks/b34ef20895bb7cde.js",
+      "static/chunks/c6eb4c659533e4c9.js",
       "static/chunks/a407c92e68a96beb.js",
-      "static/chunks/turbopack-b0c0b3cf5ed64fdf.js"
+      "static/chunks/turbopack-adbc8fb228f83684.js"
     ]
   },
   "ampFirstPages": []

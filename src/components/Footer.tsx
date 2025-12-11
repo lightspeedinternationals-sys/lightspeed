@@ -36,23 +36,22 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-gray-50 border-t border-gray-200">
       <div className="container-custom py-12">
         {/* Logo Section */}
         <motion.div
           className="flex justify-center mb-8"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-
           transition={{ duration: 0.5 }}
         >
           <motion.div
             className="relative w-24 h-24"
             animate={{
               filter: [
-                "drop-shadow(0 0 10px rgba(245,208,138,0.3))",
-                "drop-shadow(0 0 20px rgba(245,208,138,0.5))",
-                "drop-shadow(0 0 10px rgba(245,208,138,0.3))"
+                "drop-shadow(0 0 10px rgba(255, 60, 60, 0.3))",
+                "drop-shadow(0 0 20px rgba(255, 60, 60, 0.5))",
+                "drop-shadow(0 0 10px rgba(255, 60, 60, 0.3))"
               ]
             }}
             transition={{ duration: 3, repeat: Infinity }}
@@ -70,22 +69,21 @@ const Footer = () => {
           className="grid md:grid-cols-4 gap-8 mb-8"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
-
+          whileInView="visible"
+          viewport={{ once: true }}
         >
           {/* Company */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-foreground">Company</h3>
+            <h3 className="text-lg font-bold text-gray-900">Company</h3>
             <ul className="space-y-2">
               {["About Us", "Careers", "Blog", "Contact"].map((item) => (
                 <li key={item}>
                   <motion.a
                     href="#"
-                    className="text-muted-foreground inline-block"
+                    className="text-gray-600 hover:text-[#ff3c3c] inline-block transition-colors"
                     variants={linkVariants}
                     whileHover="hover"
                     whileTap={{ scale: 0.95 }}
-
                   >
                     {item}
                   </motion.a>
@@ -96,17 +94,16 @@ const Footer = () => {
 
           {/* Help & Support */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-foreground">Help & Support</h3>
+            <h3 className="text-lg font-bold text-gray-900">Help & Support</h3>
             <ul className="space-y-2">
               {["Track Shipment", "Customer Service", "Shipping Policy", "FAQ"].map((item) => (
                 <li key={item}>
                   <motion.a
                     href="#"
-                    className="text-muted-foreground inline-block"
+                    className="text-gray-600 hover:text-[#ff3c3c] inline-block transition-colors"
                     variants={linkVariants}
                     whileHover="hover"
                     whileTap={{ scale: 0.95 }}
-
                   >
                     {item}
                   </motion.a>
@@ -117,16 +114,15 @@ const Footer = () => {
 
           {/* Quick Links */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-foreground">Quick Links</h3>
+            <h3 className="text-lg font-bold text-gray-900">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <motion.button
                   onClick={scrollToQuote}
-                  className="text-muted-foreground"
+                  className="text-gray-600 hover:text-[#ff3c3c] transition-colors"
                   variants={linkVariants}
                   whileHover="hover"
                   whileTap={{ scale: 0.95 }}
-
                 >
                   Request a Quote
                 </motion.button>
@@ -135,11 +131,10 @@ const Footer = () => {
                 <li key={item}>
                   <motion.a
                     href="#"
-                    className="text-muted-foreground inline-block"
+                    className="text-gray-600 hover:text-[#ff3c3c] inline-block transition-colors"
                     variants={linkVariants}
                     whileHover="hover"
                     whileTap={{ scale: 0.95 }}
-
                   >
                     {item}
                   </motion.a>
@@ -150,17 +145,17 @@ const Footer = () => {
 
           {/* Contact Info */}
           <motion.div className="space-y-4" variants={itemVariants}>
-            <h3 className="text-lg font-bold text-foreground">Contact Us</h3>
+            <h3 className="text-lg font-bold text-gray-900">Contact Us</h3>
             <div className="space-y-3">
               <motion.div
                 className="flex items-start gap-3"
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
               >
-                <Phone className="w-5 h-5 text-primary mt-1" />
+                <Phone className="w-5 h-5 text-[#ff3c3c] mt-1" />
                 <div className="text-sm">
-                  <div className="text-muted-foreground">Phone / WhatsApp</div>
-                  <a href="tel:+919566650409" className="text-foreground hover:text-primary transition-colors">+91 95666 50409</a>
+                  <div className="text-gray-500">Phone / WhatsApp</div>
+                  <a href="tel:+919566650409" className="text-gray-700 hover:text-[#ff3c3c] transition-colors">+91 95666 50409</a>
                 </div>
               </motion.div>
               <motion.div
@@ -168,10 +163,10 @@ const Footer = () => {
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
               >
-                <Mail className="w-5 h-5 text-primary mt-1" />
+                <Mail className="w-5 h-5 text-[#ff3c3c] mt-1" />
                 <div className="text-sm">
-                  <div className="text-muted-foreground">Email</div>
-                  <a href="mailto:lightspeedinternationals@gmail.com" className="text-foreground hover:text-primary break-all transition-colors">
+                  <div className="text-gray-500">Email</div>
+                  <a href="mailto:lightspeedinternationals@gmail.com" className="text-gray-700 hover:text-[#ff3c3c] break-all transition-colors">
                     lightspeedinternationals@gmail.com
                   </a>
                 </div>
@@ -181,10 +176,10 @@ const Footer = () => {
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
               >
-                <MapPin className="w-5 h-5 text-primary mt-1" />
+                <MapPin className="w-5 h-5 text-[#ff3c3c] mt-1" />
                 <div className="text-sm">
-                  <div className="text-muted-foreground">Address</div>
-                  <p className="text-foreground">
+                  <div className="text-gray-500">Address</div>
+                  <p className="text-gray-700">
                     57, Periyar Street, Padikuppam<br />
                     Koyambedu, Chennai – 600107
                   </p>
@@ -196,14 +191,13 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <motion.div
-          className="border-t border-border pt-8 text-center"
+          className="border-t border-gray-200 pt-8 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-
           transition={{ delay: 0.3 }}
         >
-          <p className="text-muted-foreground">
-            <span className="font-bold text-foreground">LIGHT SPEED</span> – Logistics & Freight Forwarding Solutions © {new Date().getFullYear()} All Rights Reserved.
+          <p className="text-gray-500">
+            <span className="font-bold text-gray-900">LIGHT SPEED</span> – Logistics & Freight Forwarding Solutions © {new Date().getFullYear()} All Rights Reserved.
           </p>
         </motion.div>
       </div>

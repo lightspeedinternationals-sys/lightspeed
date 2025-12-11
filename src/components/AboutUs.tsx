@@ -25,23 +25,23 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; s
 
 const AboutUs = () => {
   return (
-    <section className="section-padding bg-background overflow-hidden">
+    <section className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Side */}
           <div className="space-y-6 text-center lg:text-left">
             <motion.h2
-              className="text-4xl md:text-5xl font-bold text-foreground"
+              className="text-4xl md:text-5xl font-bold text-gray-900"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              About <span className="text-primary">LIGHT SPEED</span>
+              About <span className="text-[#ff3c3c]">LIGHT SPEED</span>
             </motion.h2>
 
             <motion.p
-              className="text-lg text-muted-foreground leading-relaxed"
+              className="text-lg text-gray-600 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -69,10 +69,10 @@ const AboutUs = () => {
                 transition={{ duration: 0.5 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary">
+                <div className="text-3xl md:text-4xl font-bold text-[#ff3c3c]">
                   <AnimatedCounter end={2020} duration={2500} />
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground">Founded</div>
+                <div className="text-xs md:text-sm text-gray-600">Founded</div>
               </motion.div>
               <motion.div
                 className="space-y-2"
@@ -82,10 +82,10 @@ const AboutUs = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-secondary">
+                <div className="text-3xl md:text-4xl font-bold text-[#ff3c3c]">
                   <AnimatedCounter end={98} suffix="%" duration={2000} />
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground">Success Rate</div>
+                <div className="text-xs md:text-sm text-gray-600">Success Rate</div>
               </motion.div>
               <motion.div
                 className="space-y-2"
@@ -95,17 +95,17 @@ const AboutUs = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-primary">
+                <div className="text-3xl md:text-4xl font-bold text-[#ff3c3c]">
                   <AnimatedCounter end={5000} suffix="+" duration={2500} />
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground">Happy Clients</div>
+                <div className="text-xs md:text-sm text-gray-600">Happy Clients</div>
               </motion.div>
             </motion.div>
           </div>
 
           {/* Animation Side */}
           <motion.div
-            className="hidden lg:block w-full max-w-lg mx-auto"
+            className="block w-full max-w-lg mx-auto mt-12 lg:mt-0"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
