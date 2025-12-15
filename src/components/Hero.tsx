@@ -8,6 +8,7 @@ import { useState, useEffect, useRef, MouseEvent } from "react";
 import heroBg from "@/assets/hero-bg.png";
 import lightSpeedLogo from "@/assets/light-speed-logo.png";
 import MagneticButton from "@/components/ui/MagneticButton";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Helper for staggered text
 const StaggerText = ({ text, className = "", delayStr = 0 }: { text: string, className?: string, delayStr?: number }) => {
@@ -59,12 +60,14 @@ const Hero = () => {
 
   const containerRef = useRef<HTMLElement>(null);
   const { scrollY } = useScroll();
+  const isMobile = useIsMobile();
 
   // Parallax Logic
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
   const handleMouseMove = (e: MouseEvent) => {
+    if (isMobile) return;
     const { clientX, clientY } = e;
     const { innerWidth, innerHeight } = window;
     mouseX.set(clientX / innerWidth - 0.5);
@@ -96,13 +99,17 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center origin-center"
         style={{
           backgroundImage: `url(${heroBg.src})`,
-          y: bgY
+          y: isMobile ? 0 : bgY
         }}
         initial={{ scale: 1.1, opacity: 0 }}
-        animate={{
-          scale: [1.1, 1.15, 1.1],
-          opacity: 1
-        }}
+        animate={
+          isMobile
+            ? { scale: 1.1, opacity: 1 }
+            : {
+              scale: [1.1, 1.15, 1.1],
+              opacity: 1
+            }
+        }
         transition={{
           scale: {
             duration: 20,
@@ -119,25 +126,29 @@ const Hero = () => {
       {/* Dark gradient overlay for premium readability */}
 
 
-      {/* Interactive Parallax Blobs */}
-      <motion.div
-        className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
-        style={{ x: moveX1, y: moveY1 }}
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3]
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"
-        style={{ x: moveX2, y: moveY2 }}
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.5, 0.3, 0.5]
-        }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-      />
+      {/* Interactive Parallax Blobs - Reduced motion/blur on mobile */}
+      {!isMobile && (
+        <>
+          <motion.div
+            className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
+            style={{ x: moveX1, y: moveY1 }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.5, 0.3]
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+          <motion.div
+            className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"
+            style={{ x: moveX2, y: moveY2 }}
+            animate={{
+              scale: [1.2, 1, 1.2],
+              opacity: [0.5, 0.3, 0.5]
+            }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </>
+      )}
 
       {/* Dark overlay for text contrast if background is too bright - Optional, currently removed as per request to remove white fades. 
           If text is unreadable, we might need a dark dimming layer here instead of white. 

@@ -9,7 +9,7 @@
   "static/chunks/src_assets_lottie animation_delivery-team_json_efa10036._.js",
   "static/chunks/src_assets_lottie animation_Delivery car logistic_json_60c1d285._.js",
   "static/chunks/src_assets_601ec2fb._.js",
-  "static/chunks/src_data_addresses_ts_b6498668._.js",
+  "static/chunks/src_0a393bb7._.js",
   "static/chunks/node_modules_32cfa740._.js"
 ],
     source: "dynamic"

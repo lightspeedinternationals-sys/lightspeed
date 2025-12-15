@@ -76,7 +76,8 @@ const JsonLd = () => {
             }
         ],
         "sameAs": [
-            "https://facebook.com/lightspeed"
+            "https://facebook.com/lightspeed",
+            "https://instagram.com/lightspeed"
         ],
         "priceRange": "$$"
     };
@@ -93,6 +94,7 @@ const JsonLd = () => {
         }
     };
 
+    // FAQ Schema (AEO Optimized)
     // FAQ Schema (AEO Optimized)
     const faqSchema = {
         "@context": "https://schema.org",
@@ -113,9 +115,25 @@ const JsonLd = () => {
                     "@type": "Answer",
                     "text": "You can track your shipment in real-time using our online tracking dashboard or by contacting our 24/7 support team."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "What are your operating hours?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We operate Monday to Saturday from 09:00 AM to 09:00 PM."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you provide customs clearance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we handle complete import and export customs clearance to ensure smooth transit."
+                }
             }
         ]
-    }
+    };
 
     return (
         <>

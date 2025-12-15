@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 interface Point {
     x: number;
@@ -11,8 +12,10 @@ interface Point {
 
 const CursorTrail = () => {
     const [points, setPoints] = useState<Point[]>([]);
+    const isMobile = useIsMobile();
 
     useEffect(() => {
+        if (isMobile) return;
         const handleMouseMove = (e: MouseEvent) => {
             setPoints((prev) => {
                 const newPoint = { x: e.clientX, y: e.clientY, id: Date.now() + Math.random() };
@@ -22,7 +25,9 @@ const CursorTrail = () => {
 
         window.addEventListener("mousemove", handleMouseMove);
         return () => window.removeEventListener("mousemove", handleMouseMove);
-    }, []);
+    }, [isMobile]);
+
+    if (isMobile) return null;
 
     return (
         <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">

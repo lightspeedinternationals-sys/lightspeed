@@ -11,15 +11,17 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://lightspeedinternationals.com"), // Placeholder URL, update if user has one
+    metadataBase: new URL("https://lightspeedinternationals.com"),
     title: {
         default: "Light Speed Logistics | Fast & Reliable Global Shipping",
         template: "%s | Light Speed Logistics",
     },
-    description: "Light Speed Logistics offers fast, secure, and affordable international courier and freight services. Based in Chennai, delivering worldwide.",
+    description: "Your trusted logistics partner for domestic & international deliveries. offering express courier, freight forwarding, and customs clearance services from Chennai to the world. Speed. Security. Reliability.",
     keywords: [
         "Logistics", "Courier Service", "International Shipping", "Freight Forwarding",
-        "Chennai Logistics", "Fast Delivery", "Secure Shipping", "Light Speed Internationals"
+        "Chennai Logistics", "Fast Delivery", "Secure Shipping", "Light Speed Internationals",
+        "Door to Door Delivery", "Air Freight", "Sea Freight", "Customs Clearance",
+        "Best Courier Service in Chennai", "International Parcel Service"
     ],
     authors: [{ name: "Light Speed Logistics" }],
     creator: "Light Speed Logistics",
@@ -39,15 +41,15 @@ export const metadata: Metadata = {
         type: "website",
         locale: "en_US",
         url: "https://lightspeedinternationals.com",
-        title: "Light Speed Logistics | Global Shipping simplified",
-        description: "Reliable international courier and freight solutions. We pick up from your door and deliver to the world.",
+        title: "Light Speed Logistics | We Deliver Beyond",
+        description: "Speed. Security. Reliability. Trusted international courier and freight services from Chennai.",
         siteName: "Light Speed Logistics",
         images: [
             {
-                url: "/og-image.jpg", // We need to ensure this image exists or use a logo
+                url: "/og-image.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Light Speed Logistics",
+                alt: "Light Speed Logistics Hero Banner",
             },
         ],
     },
@@ -61,6 +63,12 @@ export const metadata: Metadata = {
         canonical: "/",
     },
     category: "Logistics",
+    other: {
+        "geo.region": "IN-TN",
+        "geo.placename": "Chennai",
+        "geo.position": "13.0732;80.1934",
+        "ICBM": "13.0732, 80.1934"
+    }
 };
 
 export default function RootLayout({

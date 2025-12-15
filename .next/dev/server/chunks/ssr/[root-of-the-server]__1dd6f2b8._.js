@@ -1014,7 +1014,8 @@ const JsonLd = ()=>{
             }
         ],
         "sameAs": [
-            "https://facebook.com/lightspeed"
+            "https://facebook.com/lightspeed",
+            "https://instagram.com/lightspeed"
         ],
         "priceRange": "$$"
     };
@@ -1029,6 +1030,7 @@ const JsonLd = ()=>{
             "query-input": "required name=search_term_string"
         }
     };
+    // FAQ Schema (AEO Optimized)
     // FAQ Schema (AEO Optimized)
     const faqSchema = {
         "@context": "https://schema.org",
@@ -1049,6 +1051,22 @@ const JsonLd = ()=>{
                     "@type": "Answer",
                     "text": "You can track your shipment in real-time using our online tracking dashboard or by contacting our 24/7 support team."
                 }
+            },
+            {
+                "@type": "Question",
+                "name": "What are your operating hours?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We operate Monday to Saturday from 09:00 AM to 09:00 PM."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you provide customs clearance?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we handle complete import and export customs clearance to ensure smooth transit."
+                }
             }
         ]
     };
@@ -1062,7 +1080,7 @@ const JsonLd = ()=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/JsonLd.tsx",
-                lineNumber: 122,
+                lineNumber: 140,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1073,7 +1091,7 @@ const JsonLd = ()=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/JsonLd.tsx",
-                lineNumber: 127,
+                lineNumber: 145,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$script$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -1084,7 +1102,7 @@ const JsonLd = ()=>{
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/JsonLd.tsx",
-                lineNumber: 132,
+                lineNumber: 150,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]

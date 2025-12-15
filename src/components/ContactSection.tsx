@@ -57,12 +57,16 @@ const ContactSection = () => {
                                 {item.title}
                             </h3>
 
+                            {/* Info */}
+
+
                             {/* Main Content Link */}
                             <a
                                 href={item.href}
                                 target={item.icon.type === MapPin ? "_blank" : undefined}
                                 rel={item.icon.type === MapPin ? "noopener noreferrer" : undefined}
-                                className="text-gray-600 font-medium mb-4 whitespace-pre-line block hover:text-[#FF0000] transition-colors"
+                                className="text-gray-600 font-medium mb-4 whitespace-pre-line block hover:text-[#FF0000] transition-colors break-words"
+                                aria-label={`Contact via ${item.title}`}
                             >
                                 {item.content}
                             </a>
