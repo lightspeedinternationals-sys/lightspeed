@@ -341,17 +341,6 @@ img, video {
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
-  background-attachment: scroll;
-}
-
-@media (min-width: 768px) {
-  body {
-    background-attachment: fixed;
-  }
-}
-
-body {
-  background-image: radial-gradient(circle at 50% 0, #ff3c3c1a 0%, #0000 50%), linear-gradient(#fff, #f1f5f9);
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif;
 }
 
@@ -430,10 +419,7 @@ html {
 .card-dark {
   border-width: 1px;
   border-color: hsl(var(--border) / .5);
-  background-color: hsl(var(--card) / .8);
-  --tw-backdrop-blur: blur(12px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  background-color: hsl(var(--card) / .9);
   border-radius: .75rem;
   padding: 1.5rem;
   transition-property: all;
@@ -2456,10 +2442,6 @@ html {
   font-style: italic;
 }
 
-.not-italic {
-  font-style: normal;
-}
-
 .tabular-nums {
   --tw-numeric-spacing: tabular-nums;
   font-variant-numeric: var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
@@ -2860,12 +2842,6 @@ html {
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.backdrop-blur-md {
-  --tw-backdrop-blur: blur(12px);
-  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
-  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
 }
 
 .transition {

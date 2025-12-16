@@ -321,7 +321,7 @@ const Hero = ()=>{
             !isMobile && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        className: "absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]",
+                        className: "absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[80px] will-change-transform",
                         style: {
                             x: moveX1,
                             y: moveY1
@@ -349,7 +349,7 @@ const Hero = ()=>{
                         columnNumber: 11
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        className: "absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]",
+                        className: "absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[80px] will-change-transform",
                         style: {
                             x: moveX2,
                             y: moveY2
@@ -389,8 +389,8 @@ const Hero = ()=>{
                         opacity: 1
                     },
                     transition: {
-                        staggerChildren: 0.15,
-                        delayChildren: 0.3
+                        staggerChildren: 0.1,
+                        delayChildren: 0.1
                     },
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -493,7 +493,7 @@ const Hero = ()=>{
                                                     x: 0
                                                 },
                                                 transition: {
-                                                    delay: 0.8
+                                                    delay: 0.3
                                                 },
                                                 children: "We Deliver"
                                             }, void 0, false, {
@@ -512,7 +512,7 @@ const Hero = ()=>{
                                                     x: 0
                                                 },
                                                 transition: {
-                                                    delay: 1.0
+                                                    delay: 0.4
                                                 },
                                                 children: "Beyond"
                                             }, void 0, false, {
@@ -546,8 +546,8 @@ const Hero = ()=>{
                                 opacity: 1
                             },
                             transition: {
-                                duration: 0.6,
-                                delay: 1.5
+                                duration: 0.4,
+                                delay: 0.5
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].span, {
@@ -561,8 +561,8 @@ const Hero = ()=>{
                                         x: 0
                                     },
                                     transition: {
-                                        delay: 1.6,
-                                        duration: 0.5
+                                        delay: 0.6,
+                                        duration: 0.4
                                     },
                                     children: "Speed."
                                 }, void 0, false, {
@@ -582,8 +582,8 @@ const Hero = ()=>{
                                         x: 0
                                     },
                                     transition: {
-                                        delay: 1.9,
-                                        duration: 0.5
+                                        delay: 0.7,
+                                        duration: 0.4
                                     },
                                     children: "Security."
                                 }, void 0, false, {
@@ -603,8 +603,8 @@ const Hero = ()=>{
                                         x: 0
                                     },
                                     transition: {
-                                        delay: 2.2,
-                                        duration: 0.5
+                                        delay: 0.8,
+                                        duration: 0.4
                                     },
                                     children: "Reliability."
                                 }, void 0, false, {
@@ -629,8 +629,8 @@ const Hero = ()=>{
                                 y: 0
                             },
                             transition: {
-                                duration: 0.6,
-                                delay: 2.4
+                                duration: 0.4,
+                                delay: 0.9
                             },
                             children: "Your trusted logistics partner for domestic & international deliveries. From express courier services to complete freight management, we ensure your shipments reach safely — every time."
                         }, void 0, false, {
@@ -649,8 +649,8 @@ const Hero = ()=>{
                                 y: 0
                             },
                             transition: {
-                                duration: 0.6,
-                                delay: 2.6
+                                duration: 0.4,
+                                delay: 1.0
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$MagneticButton$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -714,8 +714,8 @@ const Hero = ()=>{
                                 y: 0
                             },
                             transition: {
-                                duration: 0.6,
-                                delay: 2.8
+                                duration: 0.4,
+                                delay: 1.1
                             },
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1144,22 +1144,19 @@ const ServiceTabs = ()=>{
                                 className: "space-y-6",
                                 initial: {
                                     opacity: 0,
-                                    x: -20,
-                                    filter: "blur(10px)"
+                                    x: -20
                                 },
                                 animate: {
                                     opacity: 1,
-                                    x: 0,
-                                    filter: "blur(0px)"
+                                    x: 0
                                 },
                                 exit: {
                                     opacity: 0,
-                                    x: 20,
-                                    filter: "blur(10px)"
+                                    x: 20
                                 },
                                 transition: {
-                                    duration: 0.4,
-                                    ease: "easeInOut"
+                                    duration: 0.3,
+                                    ease: "easeOut"
                                 },
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -4792,7 +4789,7 @@ const StickyHeader = ()=>{
         });
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].header, {
-        className: "fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-lg",
+        className: "fixed top-0 left-0 right-0 z-50 bg-background/95 border-b border-border/50 shadow-lg",
         initial: {
             y: -100,
             opacity: 0

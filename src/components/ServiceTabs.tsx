@@ -128,10 +128,10 @@ const ServiceTabs = () => {
             <motion.div
               key={activeService.id}
               className="space-y-6"
-              initial={{ opacity: 0, x: -20, filter: "blur(10px)" }}
-              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, x: 20, filter: "blur(10px)" }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 20 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
             >
               <h3 className="text-3xl md:text-4xl font-bold text-foreground">
                 {activeService.title}

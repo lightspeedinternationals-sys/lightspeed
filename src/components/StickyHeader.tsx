@@ -40,7 +40,7 @@ const StickyHeader = () => {
 
   return (
     <motion.header
-      className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border/50 shadow-lg"
+      className="fixed top-0 left-0 right-0 z-50 bg-background/95 border-b border-border/50 shadow-lg"
       initial={{ y: -100, opacity: 0 }}
       animate={{
         y: isVisible ? 0 : -100,

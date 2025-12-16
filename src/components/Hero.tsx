@@ -130,7 +130,7 @@ const Hero = () => {
       {!isMobile && (
         <>
           <motion.div
-            className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
+            className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[80px] will-change-transform"
             style={{ x: moveX1, y: moveY1 }}
             animate={{
               scale: [1, 1.2, 1],
@@ -139,7 +139,7 @@ const Hero = () => {
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div
-            className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"
+            className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[80px] will-change-transform"
             style={{ x: moveX2, y: moveY2 }}
             animate={{
               scale: [1.2, 1, 1.2],
@@ -160,7 +160,7 @@ const Hero = () => {
           className="max-w-4xl mx-auto space-y-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ staggerChildren: 0.15, delayChildren: 0.3 }}
+          transition={{ staggerChildren: 0.1, delayChildren: 0.1 }}
         >
           {/* Floating Logo - with gentle float animation */}
           <motion.div
@@ -200,7 +200,7 @@ const Hero = () => {
                   className="text-[#FF6B6B] inline-block mr-3" // Salmon/Red color
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.8 }}
+                  transition={{ delay: 0.3 }}
                 >
                   We Deliver
                 </motion.span>
@@ -208,7 +208,7 @@ const Hero = () => {
                   className="text-[#F4D03F] inline-block" // Beige/Gold color
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.0 }}
+                  transition={{ delay: 0.4 }}
                 >
                   Beyond
                 </motion.span>
@@ -221,13 +221,13 @@ const Hero = () => {
             className="mt-6 text-3xl md:text-4xl font-bold tracking-wide drop-shadow-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.5 }}
+            transition={{ duration: 0.4, delay: 0.5 }}
           >
             <motion.span
               className="inline-block text-[#FF6B6B]" // Salmon/Red
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.6, duration: 0.5 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
             >
               Speed.
             </motion.span>{" "}
@@ -235,7 +235,7 @@ const Hero = () => {
               className="inline-block text-[#EFF6FF]" // Off-white/AliceBlue
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.9, duration: 0.5 }}
+              transition={{ delay: 0.7, duration: 0.4 }}
             >
               Security.
             </motion.span>{" "}
@@ -243,7 +243,7 @@ const Hero = () => {
               className="inline-block text-[#EFF6FF]" // Off-white/AliceBlue
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 2.2, duration: 0.5 }}
+              transition={{ delay: 0.8, duration: 0.4 }}
             >
               Reliability.
             </motion.span>
@@ -254,7 +254,7 @@ const Hero = () => {
             className="mt-6 text-lg md:text-xl text-gray-200/90 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.4 }}
+            transition={{ duration: 0.4, delay: 0.9 }}
           >
             Your trusted logistics partner for domestic & international deliveries.
             From express courier services to complete freight management, we ensure
@@ -266,7 +266,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.6 }}
+            transition={{ duration: 0.4, delay: 1.0 }}
           >
             <MagneticButton strength={0.3}>
               <Button
@@ -296,7 +296,7 @@ const Hero = () => {
             className="grid grid-cols-3 gap-8 pt-12 max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 2.8 }}
+            transition={{ duration: 0.4, delay: 1.1 }}
           >
             <motion.div
               className="space-y-2 cursor-default"

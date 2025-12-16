@@ -2,6 +2,7 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import type { Metadata, Viewport } from "next";
 import JsonLd from "@/components/JsonLd";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const viewport: Viewport = {
     themeColor: "#0f172a",
@@ -78,8 +79,19 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body suppressHydrationWarning className="bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary">
+            <body suppressHydrationWarning className="bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary relative min-h-screen">
+                {/* Optimized Fixed Background */}
+                <div
+                    className="fixed inset-0 -z-50 pointer-events-none"
+                    style={{
+                        backgroundImage: `
+                            radial-gradient(circle at 50% 0%, rgba(255, 60, 60, 0.1) 0%, transparent 50%),
+                            linear-gradient(to bottom, #ffffff, #f1f5f9)
+                        `
+                    }}
+                />
                 <Providers>
+                    <SmoothScroll />
                     {children}
                     <JsonLd />
                 </Providers>
