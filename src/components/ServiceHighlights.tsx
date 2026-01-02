@@ -11,29 +11,29 @@ import shippingImg from "@/assets/shipping-container.png";
 
 const services = [
   {
-    title: "Courier Service",
-    tagline: "Fast. Secure. Reliable.",
-    features: ["Priority Delivery", "Express Shipping", "Economy Options"],
+    title: "Courier Service in Chennai",
+    tagline: "Fast & Reliable International Courier.",
+    features: ["Priority Delivery", "Express Shipping to USA/UK", "Economy Options"],
     image: cartImg,
     reverse: false,
   },
   {
-    title: "Warehousing",
-    tagline: "Smart Storage. Smart Handling.",
+    title: "Warehousing & Storage",
+    tagline: "Secure Freight Storage in Chennai.",
     features: ["24/7 Surveillance", "Climate-Controlled Storage", "Real-Time Inventory Management", "Flexible Storage Duration"],
     image: containerImg,
     reverse: true,
   },
   {
     title: "Freight Forwarding",
-    tagline: "Global Shipping Made Simple.",
-    features: ["Sea, Air & Surface Transport", "Customs Clearance Support", "International Documentation", "Global Partner Network"],
+    tagline: "Global Air & Sea Freight Shipping.",
+    features: ["Sea, Air & Surface Transport", "Import & Export Clearance", "Global Trade Documentation", "World-wide Partner Network"],
     image: boxImg,
     reverse: false,
   },
   {
-    title: "Customized Logistic Solutions",
-    tagline: "Tailored Transport for Your Business.",
+    title: "Customized Logistics",
+    tagline: "Tailored Transport & Shipping Solutions.",
     features: ["Custom Workflows", "Fragile Item Handling", "Bulk Shipment Management", "Enterprise-Grade Solutions"],
     image: shippingImg,
     reverse: true,

@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://lightspeedinternationals.com"),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com"),
     title: {
         default: "Light Speed Logistics | Fast & Reliable Global Shipping",
         template: "%s | Light Speed Logistics",
@@ -22,8 +22,20 @@ export const metadata: Metadata = {
         "Logistics", "Courier Service", "International Shipping", "Freight Forwarding",
         "Chennai Logistics", "Fast Delivery", "Secure Shipping", "Light Speed Internationals",
         "Door to Door Delivery", "Air Freight", "Sea Freight", "Customs Clearance",
-        "Best Courier Service in Chennai", "International Parcel Service"
+        "Best Courier Service in Chennai", "International Parcel Service",
+        "Cheap Courier to USA from Chennai", "Student Offer Courier Service",
+        "Medicine Delivery International", "Food Items Courier to USA",
+        "Excess Baggage Shipping", "Relocation Services Chennai",
+        "Import Export Agent in Chennai", "Global Logistics Partner",
+        "Export Consultants", "Import Clearance Services", "Heavy Machinery Import"
     ],
+    appleWebApp: {
+        title: "LightSpeed",
+        statusBarStyle: "default",
+    },
+    formatDetection: {
+        telephone: false,
+    },
     authors: [{ name: "Light Speed Logistics" }],
     creator: "Light Speed Logistics",
     publisher: "Light Speed Logistics",
@@ -41,13 +53,13 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: "https://lightspeedinternationals.com",
+        url: process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com",
         title: "Light Speed Logistics | We Deliver Beyond",
         description: "Speed. Security. Reliability. Trusted international courier and freight services from Chennai.",
         siteName: "Light Speed Logistics",
         images: [
             {
-                url: "/og-image.jpg",
+                url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com"}/og-image.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "Light Speed Logistics Hero Banner",
@@ -61,14 +73,18 @@ export const metadata: Metadata = {
         images: ["/og-image.jpg"],
     },
     alternates: {
-        canonical: "/",
+        canonical: process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com",
+        languages: {
+            'en-US': process.env.NEXT_PUBLIC_BASE_URL || 'https://lightspeedinternationals.com',
+        },
     },
     category: "Logistics",
     other: {
         "geo.region": "IN-TN",
         "geo.placename": "Chennai",
         "geo.position": "13.0732;80.1934",
-        "ICBM": "13.0732, 80.1934"
+        "ICBM": "13.0732, 80.1934",
+        "google-site-verification": "verification_token", // Placeholder for actual token
     }
 };
 
@@ -79,6 +95,12 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
+            <head>
+                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+                <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            </head>
             <body suppressHydrationWarning className="bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary relative min-h-screen">
                 {/* Optimized Fixed Background */}
                 <div

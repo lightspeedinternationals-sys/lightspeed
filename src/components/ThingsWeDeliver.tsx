@@ -73,12 +73,11 @@ const ThingsWeDeliver = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Things We Deliver
+              International Courier Items We Ship
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              We handle a wide range of items with industry-level safety and care.
-              From small parcels to bulk shipments, we ensure everything reaches
-              safely.
+              We handle a wide range of shipments from Chennai to the world.
+              From documents and medicine to homemade food and commercial freight, we ensure safe and fast delivery.
             </p>
           </motion.div>
 

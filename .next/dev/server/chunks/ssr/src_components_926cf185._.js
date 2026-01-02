@@ -383,14 +383,13 @@ const Hero = ()=>{
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                     className: "max-w-4xl mx-auto space-y-8",
                     initial: {
-                        opacity: 0
+                        opacity: 1
                     },
                     animate: {
                         opacity: 1
                     },
                     transition: {
-                        staggerChildren: 0.1,
-                        delayChildren: 0.1
+                        staggerChildren: 0.1
                     },
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -485,15 +484,15 @@ const Hero = ()=>{
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].span, {
                                                 className: "text-[#FF6B6B] inline-block mr-3",
                                                 initial: {
-                                                    opacity: 0,
-                                                    x: -20
+                                                    opacity: 1,
+                                                    x: 0
                                                 },
                                                 animate: {
                                                     opacity: 1,
                                                     x: 0
                                                 },
                                                 transition: {
-                                                    delay: 0.3
+                                                    delay: 0
                                                 },
                                                 children: "We Deliver"
                                             }, void 0, false, {
@@ -504,15 +503,15 @@ const Hero = ()=>{
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].span, {
                                                 className: "text-[#F4D03F] inline-block",
                                                 initial: {
-                                                    opacity: 0,
-                                                    x: -20
+                                                    opacity: 1,
+                                                    x: 0
                                                 },
                                                 animate: {
                                                     opacity: 1,
                                                     x: 0
                                                 },
                                                 transition: {
-                                                    delay: 0.4
+                                                    delay: 0
                                                 },
                                                 children: "Beyond"
                                             }, void 0, false, {
@@ -2559,7 +2558,7 @@ const ThingsWeDeliver = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-4xl md:text-5xl font-bold text-gray-900",
-                                    children: "Things We Deliver"
+                                    children: "International Courier Items We Ship"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ThingsWeDeliver.tsx",
                                     lineNumber: 75,
@@ -2567,7 +2566,7 @@ const ThingsWeDeliver = ()=>{
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-gray-600 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0",
-                                    children: "We handle a wide range of items with industry-level safety and care. From small parcels to bulk shipments, we ensure everything reaches safely."
+                                    children: "We handle a wide range of shipments from Chennai to the world. From documents and medicine to homemade food and commercial freight, we ensure safe and fast delivery."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ThingsWeDeliver.tsx",
                                     lineNumber: 78,
@@ -2603,17 +2602,17 @@ const ThingsWeDeliver = ()=>{
                                     className: "w-full h-auto"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                    lineNumber: 93,
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, ("TURBOPACK compile-time value", void 0))
                             }, void 0, false, {
                                 fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                lineNumber: 92,
+                                lineNumber: 91,
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0))
                         }, void 0, false, {
                             fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                            lineNumber: 85,
+                            lineNumber: 84,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -2661,12 +2660,12 @@ const ThingsWeDeliver = ()=>{
                                                     strokeWidth: 1.5
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                                    lineNumber: 124,
+                                                    lineNumber: 123,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 122,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -2674,13 +2673,13 @@ const ThingsWeDeliver = ()=>{
                                                 children: item.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 125,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                        lineNumber: 122,
+                                        lineNumber: 121,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0)),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2691,7 +2690,7 @@ const ThingsWeDeliver = ()=>{
                                                 children: item.backTitle
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                                lineNumber: 133,
+                                                lineNumber: 132,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2699,30 +2698,30 @@ const ThingsWeDeliver = ()=>{
                                                 children: item.backDesc
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 135,
                                                 columnNumber: 21
                                             }, ("TURBOPACK compile-time value", void 0))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                        lineNumber: 132,
+                                        lineNumber: 131,
                                         columnNumber: 19
                                     }, ("TURBOPACK compile-time value", void 0))
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                                lineNumber: 120,
+                                lineNumber: 119,
                                 columnNumber: 17
                             }, ("TURBOPACK compile-time value", void 0))
                         }, index, false, {
                             fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                            lineNumber: 112,
+                            lineNumber: 111,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0));
                     })
                 }, void 0, false, {
                     fileName: "[project]/src/components/ThingsWeDeliver.tsx",
-                    lineNumber: 103,
+                    lineNumber: 102,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
@@ -2768,19 +2767,19 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$assets$2f$shipping$2d
 ;
 const services = [
     {
-        title: "Courier Service",
-        tagline: "Fast. Secure. Reliable.",
+        title: "Courier Service in Chennai",
+        tagline: "Fast & Reliable International Courier.",
         features: [
             "Priority Delivery",
-            "Express Shipping",
+            "Express Shipping to USA/UK",
             "Economy Options"
         ],
         image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$assets$2f$cart$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$assets$2f$cart$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
         reverse: false
     },
     {
-        title: "Warehousing",
-        tagline: "Smart Storage. Smart Handling.",
+        title: "Warehousing & Storage",
+        tagline: "Secure Freight Storage in Chennai.",
         features: [
             "24/7 Surveillance",
             "Climate-Controlled Storage",
@@ -2792,19 +2791,19 @@ const services = [
     },
     {
         title: "Freight Forwarding",
-        tagline: "Global Shipping Made Simple.",
+        tagline: "Global Air & Sea Freight Shipping.",
         features: [
             "Sea, Air & Surface Transport",
-            "Customs Clearance Support",
-            "International Documentation",
-            "Global Partner Network"
+            "Import & Export Clearance",
+            "Global Trade Documentation",
+            "World-wide Partner Network"
         ],
         image: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$assets$2f$box$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$src$2f$assets$2f$box$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$ssr$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
         reverse: false
     },
     {
-        title: "Customized Logistic Solutions",
-        tagline: "Tailored Transport for Your Business.",
+        title: "Customized Logistics",
+        tagline: "Tailored Transport & Shipping Solutions.",
         features: [
             "Custom Workflows",
             "Fragile Item Handling",
@@ -5497,13 +5496,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 ;
 ;
 const CursorFollower = ()=>{
-    const [position, setPosition] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
-        x: 0,
-        y: 0
-    });
-    const [isHovering, setIsHovering] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Refs for smooth animation
+    // Refs for direct DOM manipulation (No re-renders)
+    const containerRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(null);
     const cursorRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])({
         x: 0,
         y: 0
@@ -5513,36 +5507,34 @@ const CursorFollower = ()=>{
         y: 0
     });
     const animationFrameRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])();
-    const prefersReducedMotion = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(false);
+    const isVisible = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useRef"])(false);
+    // Only use state for hover styles (much less frequent than mousemove)
+    const [isHovering, setIsHovering] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         // Accessibility and Device checks
         const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        prefersReducedMotion.current = mediaQuery.matches;
         if (isTouchDevice) return;
         const onMouseMove = (e)=>{
             cursorRef.current = {
                 x: e.clientX,
                 y: e.clientY
             };
-            if (!isVisible) setIsVisible(true);
+            if (!isVisible.current && containerRef.current) {
+                isVisible.current = true;
+                containerRef.current.style.opacity = "1";
+            }
         };
         const onMouseDown = ()=>setIsHovering(true);
         const onMouseUp = ()=>setIsHovering(false);
         const onMouseOver = (e)=>{
             const target = e.target;
-            // Expanded interactivity check
             const isClickable = target.closest('a, button, input, textarea, select, [role="button"], .interactive');
-            if (isClickable) {
-                setIsHovering(true);
-            }
+            if (isClickable) setIsHovering(true);
         };
         const onMouseOut = (e)=>{
             const target = e.target;
             const isClickable = target.closest('a, button, input, textarea, select, [role="button"], .interactive');
-            if (isClickable) {
-                setIsHovering(false);
-            }
+            if (isClickable) setIsHovering(false);
         };
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('mousedown', onMouseDown);
@@ -5550,23 +5542,19 @@ const CursorFollower = ()=>{
         window.addEventListener('mouseover', onMouseOver);
         window.addEventListener('mouseout', onMouseOut);
         const animate = ()=>{
-            if (prefersReducedMotion.current) {
-                // No smoothing for reduced motion preferences
-                followerRef.current.x = cursorRef.current.x;
-                followerRef.current.y = cursorRef.current.y;
-            } else {
-                // Linear interpolation (LERP) for smooth following (Momentum effect)
-                // Lower value = heavier/slower (more momentum), Higher = lighter/faster
-                const smoothing = 0.12;
-                followerRef.current.x += (cursorRef.current.x - followerRef.current.x) * smoothing;
-                followerRef.current.y += (cursorRef.current.y - followerRef.current.y) * smoothing;
+            // Smooth LERP
+            const smoothing = 0.15;
+            followerRef.current.x += (cursorRef.current.x - followerRef.current.x) * smoothing;
+            followerRef.current.y += (cursorRef.current.y - followerRef.current.y) * smoothing;
+            if (containerRef.current) {
+                // Direct DOM update - High Performance
+                containerRef.current.style.transform = `translate3d(${followerRef.current.x}px, ${followerRef.current.y}px, 0) translate(-50%, -50%)`;
             }
-            setPosition({
-                x: followerRef.current.x,
-                y: followerRef.current.y
-            });
             animationFrameRef.current = requestAnimationFrame(animate);
         };
+        if (containerRef.current) {
+            containerRef.current.style.opacity = "0"; // Start hidden
+        }
         animate();
         return ()=>{
             window.removeEventListener('mousemove', onMouseMove);
@@ -5576,27 +5564,25 @@ const CursorFollower = ()=>{
             window.removeEventListener('mouseout', onMouseOut);
             if (animationFrameRef.current) cancelAnimationFrame(animationFrameRef.current);
         };
-    }, [
-        isVisible
-    ]);
-    if (!isVisible) return null;
+    }, []);
+    // Initial render is null or hidden, visibility handled by ref/style
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: `cursor-follower fixed pointer-events-none z-[100] transition-all duration-500 ease-out hidden md:flex items-center justify-center
+        ref: containerRef,
+        className: `cursor-follower fixed pointer-events-none z-[100] transition-colors duration-300 ease-out hidden md:flex items-center justify-center opacity-0
                 ${isHovering ? 'w-12 h-12 bg-red-600/10 border-red-500 border-2' : 'w-8 h-8 border-red-500/50 border bg-transparent'}
             `,
         style: {
             left: 0,
             top: 0,
-            transform: `translate3d(${position.x}px, ${position.y}px, 0) translate(-50%, -50%)`,
             borderRadius: '50%',
-            willChange: 'transform, width, height, border-color'
+            willChange: 'transform' // Hardware acceleration hint
         },
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: `absolute inset-0 rounded-full bg-red-500/20 blur-md transition-opacity duration-300 ${isHovering ? 'opacity-100' : 'opacity-0'}`
             }, void 0, false, {
                 fileName: "[project]/src/components/CursorFollower.tsx",
-                lineNumber: 104,
+                lineNumber: 98,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$package$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Package$3e$__["Package"], {
@@ -5604,13 +5590,13 @@ const CursorFollower = ()=>{
                 strokeWidth: 2.5
             }, void 0, false, {
                 fileName: "[project]/src/components/CursorFollower.tsx",
-                lineNumber: 107,
+                lineNumber: 101,
                 columnNumber: 13
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/CursorFollower.tsx",
-        lineNumber: 89,
+        lineNumber: 83,
         columnNumber: 9
     }, ("TURBOPACK compile-time value", void 0));
 };

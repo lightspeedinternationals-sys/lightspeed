@@ -3,22 +3,22 @@ globalThis.__BUILD_MANIFEST = {
     "/Index": [
       "static/chunks/e77be23ecbded00b.js",
       "static/chunks/a407c92e68a96beb.js",
-      "static/chunks/098f17fbdc0886e7.js",
+      "static/chunks/0cc892df5e4d05e7.js",
       "static/chunks/f062917c4dc89e19.js",
-      "static/chunks/c6eb4c659533e4c9.js",
-      "static/chunks/turbopack-7c5f550bd9d52ee5.js"
+      "static/chunks/7fe16184efd8885a.js",
+      "static/chunks/turbopack-0dc80eade10b6566.js"
     ],
     "/_app": [
       "static/chunks/7332a59fe4d94f58.js",
-      "static/chunks/c6eb4c659533e4c9.js",
+      "static/chunks/7fe16184efd8885a.js",
       "static/chunks/a407c92e68a96beb.js",
-      "static/chunks/turbopack-adbc8fb228f83684.js"
+      "static/chunks/turbopack-00a94c72f1f5bc60.js"
     ],
     "/_error": [
       "static/chunks/6f484adf5ab67c31.js",
-      "static/chunks/c6eb4c659533e4c9.js",
+      "static/chunks/7fe16184efd8885a.js",
       "static/chunks/a407c92e68a96beb.js",
-      "static/chunks/turbopack-715e860c022f080d.js"
+      "static/chunks/turbopack-769b8cc19dc1adff.js"
     ]
   },
   "devFiles": [],
@@ -28,10 +28,10 @@ globalThis.__BUILD_MANIFEST = {
   "lowPriorityFiles": [],
   "rootMainFiles": [
     "static/chunks/82f4b84e1cb4d8c0.js",
-    "static/chunks/330faf687a17f9e8.js",
-    "static/chunks/94bde6376cf279be.js",
+    "static/chunks/32b9a9a0046e15ea.js",
+    "static/chunks/8008d994f91f0fb6.js",
     "static/chunks/6740f161f60c6ab5.js",
-    "static/chunks/turbopack-6e9816d742def5c2.js"
+    "static/chunks/turbopack-2dfba1edd893bf41.js"
   ]
 };
 globalThis.__BUILD_MANIFEST.lowPriorityFiles = [

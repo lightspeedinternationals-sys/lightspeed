@@ -158,9 +158,9 @@ const Hero = () => {
       <div className="container-custom relative z-10 text-center px-4">
         <motion.div
           className="max-w-4xl mx-auto space-y-8"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
-          transition={{ staggerChildren: 0.1, delayChildren: 0.1 }}
+          transition={{ staggerChildren: 0.1 }}
         >
           {/* Floating Logo - with gentle float animation */}
           <motion.div
@@ -198,17 +198,17 @@ const Hero = () => {
               <span className="block pb-2">
                 <motion.span
                   className="text-[#FF6B6B] inline-block mr-3" // Salmon/Red color
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 1, x: 0 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 }}
+                  transition={{ delay: 0 }}
                 >
                   We Deliver
                 </motion.span>
                 <motion.span
                   className="text-[#F4D03F] inline-block" // Beige/Gold color
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 1, x: 0 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
+                  transition={{ delay: 0 }}
                 >
                   Beyond
                 </motion.span>

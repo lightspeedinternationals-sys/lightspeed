@@ -18,7 +18,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         // Simulate content loading and show splash for minimum time
         const minLoadTime = setTimeout(() => {
             setIsLoading(false);
-        }, 2500);
+        }, 800);
 
         return () => clearTimeout(minLoadTime);
     }, []);
@@ -27,7 +27,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
         <QueryClientProvider client={queryClient}>
             <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
                 <TooltipProvider>
-                    <CursorTrail />
                     <SplashScreen isLoading={isLoading} />
                     <Toaster />
                     <Sonner />
