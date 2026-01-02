@@ -36,9 +36,42 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Technologies Used
 
-- **Framework**: Next.js 14+ (App Router)
+- **Framework**: Next.js 16 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **UI Components**: shadcn-ui
 - **Animations**: Framer Motion, Lottie Web
+
+## Production Deployment
+
+### Environment Variables
+
+Create a `.env.local` file with the following variables:
+
+```
+NEXT_PUBLIC_BASE_URL=https://yourdomain.com
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Run Production Server
+
+```bash
+npm run start
+```
+
+## Performance Optimizations
+
+- Image optimization with AVIF/WebP formats
+- Compression enabled
+- Security headers configured
+- SEO metadata and structured data
+- Responsive design
+
 # light-speed-animation
+
+# lightspeed
