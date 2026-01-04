@@ -4,7 +4,7 @@ import Script from "next/script";
 
 const JsonLd = () => {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com";
-    
+
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "LogisticsService",
@@ -148,90 +148,106 @@ const JsonLd = () => {
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "Do you handle international courier services from Chennai?",
+                "name": "What logistics services do you provide?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, we are a leading international courier service in Chennai, shipping to USA, UK, Canada, UAE, Singapore, and over 200 countries with express delivery options."
+                    "text": "We provide end-to-end logistics solutions including domestic and international courier services, freight forwarding (air, sea, and surface), warehousing, and customized supply chain solutions designed for businesses and individuals."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How long does international delivery take to USA and UK?",
+                "name": "Do you offer international shipping from Chennai?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Express delivery to USA, UK, and Europe typically takes 3-5 working days. Economy options are available for cost savings with slightly longer transit times."
+                    "text": "Yes. We offer fast and reliable international shipping from Chennai to major global destinations including the USA, UK, Europe, Middle East, and Asia, supported by a strong global partner network."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What are your international shipping rates per kg?",
+                "name": "How fast is your delivery service?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Our shipping rates are highly competitive and vary based on destination and weight. We offer special discounted rates for bulk shipments and students. Contact us for a precise quote."
+                    "text": "Delivery timelines depend on destination and service type. Express international shipments typically arrive within 3–7 business days, while economy and freight services are scheduled based on cargo requirements and customs clearance."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What documents are required for sending an international courier?",
+                "name": "Do you handle customs clearance for international shipments?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "For personal shipments, you need a KYC document (Aadhar Card/Passport/Voter ID) and a packing list. For commercial shipments, an Invoice and Packing List are required."
+                    "text": "Yes. We manage complete customs documentation, compliance checks, and clearance procedures for both personal and commercial shipments, ensuring smooth cross-border delivery."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Do you offer door-to-door courier pickup?",
+                "name": "Can I track my shipment in real time?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, we offer free door pickup services for all international and domestic shipments across Chennai and surrounding areas."
+                    "text": "Absolutely. All shipments include real-time tracking, allowing customers to monitor status, location, and delivery updates through our tracking system."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Are there any items I cannot ship (Prohibited Items)?",
+                "name": "What items can be shipped internationally?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, dangerous goods like flammables, explosives, currency, perishables, and illegal substances are prohibited. Please contact us for a detailed list of restricted items."
+                    "text": "We ship a wide range of items including documents, parcels, electronics, medicines, packaged foods, garments, commercial cargo, and household goods, subject to destination-specific regulations."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Do you offer free packaging for international parcels?",
+                "name": "Are medicines and food items safe to ship?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, we provide high-quality, secure, and free weather-proof packaging to ensure your shipment reaches its destination safely."
+                    "text": "Yes. Medicines and food items are handled with strict compliance protocols, secure packaging, and temperature-sensitive logistics where required, ensuring safety and freshness."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Is transit insurance available for my valuable shipment?",
+                "name": "Do you provide packaging support?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, we offer optional transit insurance for valuable shipments to provide complete peace of mind against loss or damage."
+                    "text": "Yes. We offer professional packaging services using high-quality, tamper-proof materials to protect fragile, sensitive, and high-value shipments during transit."
                 }
             },
             {
                 "@type": "Question",
-                "name": "How can I track my shipment?",
+                "name": "Do you offer door-to-door pickup and delivery?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "You can track your shipment in real-time using our online tracking dashboard or by contacting our 24/7 support team."
+                    "text": "Yes. We provide free door pickup services and ensure doorstep delivery for both domestic and international shipments, saving time and improving convenience."
                 }
             },
             {
                 "@type": "Question",
-                "name": "What are your operating hours?",
+                "name": "Is warehousing and storage available?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We operate Monday to Saturday from 09:00 AM to 09:00 PM to assist with all your shipping needs."
+                    "text": "Yes. We provide secure warehousing and storage facilities with 24/7 surveillance, climate control, and real-time inventory management in Chennai."
                 }
             },
             {
                 "@type": "Question",
-                "name": "Do you provide customs clearance?",
+                "name": "How cost-effective are your logistics services?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, we specialize in hassle-free import and export customs clearance documentation and processing."
+                    "text": "Our pricing is competitive and transparent. By optimizing routes, partnerships, and operations, we deliver high-quality logistics services at affordable rates without compromising reliability."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Why choose your logistics company over others?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We combine speed, security, advanced tracking technology, professional handling, and customer-first service. Our focus is on timely delivery, operational transparency, and scalable logistics solutions."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I request a quote?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can request a quote directly through our website by filling out the inquiry form, or contact us via phone or WhatsApp for immediate assistance."
                 }
             }
         ]

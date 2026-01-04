@@ -12,23 +12,23 @@ import affordableImg from "@/assets/container.png";
 
 const features = [
   {
-    title: "Affordable Rates",
-    description: "We offer competitive pricing without compromising on service quality.",
+    title: "Competitive Business Rates",
+    description: "Customized pricing models for high-volume commercial and B2B shipments.",
     image: affordableImg,
   },
   {
     title: "Professional Packaging",
-    description: "Your cargo is packed with precision and care to ensure safe delivery.",
+    description: "Industrial-grade packaging to ensure safety for fragile and bulk cargo.",
     image: boxImg,
   },
   {
-    title: "Easy Tracking",
-    description: "Track your shipment in real-time with our intuitive dashboard.",
+    title: "Real-Time Global Tracking",
+    description: "Monitor international shipments 24/7 with our advanced global tracking system.",
     image: trackingImg,
   },
   {
-    title: "Free Door Pickups",
-    description: "We pick up your packages from your doorstep at no extra cost.",
+    title: "Door-to-Door Global Logistics",
+    description: "Seamless pickup and delivery from your warehouse to your client's doorstep worldwide.",
     image: courierImg,
   },
 ];

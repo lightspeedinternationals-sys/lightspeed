@@ -10,14 +10,14 @@ import Footer from "@/components/Footer";
 import StickyHeader from "@/components/StickyHeader";
 import Testimonials from "@/components/Testimonials";
 import CursorFollower from "@/components/CursorFollower";
-import BackgroundAnimation from "@/components/BackgroundAnimation";
+
 import FAQ from "@/components/FAQ";
 import ContactSection from "@/components/ContactSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen relative overflow-x-hidden">
-      <BackgroundAnimation />
+
       <CursorFollower />
       <StickyHeader />
       <Hero />

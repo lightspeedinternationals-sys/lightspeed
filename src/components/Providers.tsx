@@ -12,22 +12,10 @@ import CursorTrail from "@/components/CursorTrail";
 
 export function Providers({ children }: { children: React.ReactNode }) {
     const [queryClient] = useState(() => new QueryClient());
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        // Simulate content loading and show splash for minimum time
-        const minLoadTime = setTimeout(() => {
-            setIsLoading(false);
-        }, 800);
-
-        return () => clearTimeout(minLoadTime);
-    }, []);
-
     return (
         <QueryClientProvider client={queryClient}>
             <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
                 <TooltipProvider>
-                    <SplashScreen isLoading={isLoading} />
                     <Toaster />
                     <Sonner />
                     {children}

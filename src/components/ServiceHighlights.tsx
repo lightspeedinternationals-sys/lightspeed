@@ -88,14 +88,7 @@ const ServiceItem = ({ service, index }: { service: typeof services[0]; index: n
               />
             </motion.div>
           </motion.div>
-          <motion.div
-            className="absolute -inset-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-3xl blur-3xl -z-10"
-            animate={{
-              opacity: [0.4, 0.6, 0.4],
-              scale: [1, 1.02, 1]
-            }}
-            transition={{ duration: 4, repeat: Infinity }}
-          />
+          <div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-3xl blur-2xl -z-10" />
         </div>
       </motion.div>
 

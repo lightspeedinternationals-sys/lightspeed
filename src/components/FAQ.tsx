@@ -6,25 +6,57 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
     {
-        question: "How fast can you deliver to the USA/UK from Chennai?",
-        answer: "Our Express International Courier service typically delivers to major cities in the USA, UK, and Europe within 3-5 business days. We offer door-to-door pickup and real-time tracking for peace of mind.",
+        question: "What logistics services do you provide?",
+        answer: "We provide end-to-end logistics solutions including domestic and international courier services, freight forwarding (air, sea, and surface), warehousing, and customized supply chain solutions designed for businesses and individuals."
     },
     {
-        question: "Do you handle customs clearance for commercial shipments?",
-        answer: "Yes, Light Speed Logistics specializes in hassle-free customs clearance for both exports and imports. Our team handles all documentation, duties, and compliance requirements so your goods move smoothly across borders.",
+        question: "Do you offer international shipping from Chennai?",
+        answer: "Yes. We offer fast and reliable international shipping from Chennai to major global destinations including the USA, UK, Europe, Middle East, and Asia, supported by a strong global partner network."
     },
     {
-        question: "Can I ship personal items and household goods?",
-        answer: "Absolutely. We offer competitive rates for shipping personal effects, excess baggage, and household goods. We also provide professional packing services to ensure your items remain safe during transit.",
+        question: "How fast is your delivery service?",
+        answer: "Delivery timelines depend on destination and service type. Express international shipments typically arrive within 3–7 business days, while economy and freight services are scheduled based on cargo requirements and customs clearance."
     },
     {
-        question: "Do you offer insurance for high-value shipments?",
-        answer: "Yes, we provide comprehensive cargo insurance options for high-value or fragile shipments. Please speak with our support team to add insurance coverage to your booking.",
+        question: "Do you handle customs clearance for international shipments?",
+        answer: "Yes. We manage complete customs documentation, compliance checks, and clearance procedures for both personal and commercial shipments, ensuring smooth cross-border delivery."
     },
     {
-        question: "What items are prohibited from international shipping?",
-        answer: "Prohibited items typically include flammable liquids, explosives, narcotics, and certain perishable goods. Please check our detailed 'Prohibited Items' list or consult our support team before booking.",
+        question: "Can I track my shipment in real time?",
+        answer: "Absolutely. All shipments include real-time tracking, allowing customers to monitor status, location, and delivery updates through our tracking system."
     },
+    {
+        question: "What items can be shipped internationally?",
+        answer: "We ship a wide range of items including documents, parcels, electronics, medicines, packaged foods, garments, commercial cargo, and household goods, subject to destination-specific regulations."
+    },
+    {
+        question: "Are medicines and food items safe to ship?",
+        answer: "Yes. Medicines and food items are handled with strict compliance protocols, secure packaging, and temperature-sensitive logistics where required, ensuring safety and freshness."
+    },
+    {
+        question: "Do you provide packaging support?",
+        answer: "Yes. We offer professional packaging services using high-quality, tamper-proof materials to protect fragile, sensitive, and high-value shipments during transit."
+    },
+    {
+        question: "Do you offer door-to-door pickup and delivery?",
+        answer: "Yes. We provide free door pickup services and ensure doorstep delivery for both domestic and international shipments, saving time and improving convenience."
+    },
+    {
+        question: "Is warehousing and storage available?",
+        answer: "Yes. We provide secure warehousing and storage facilities with 24/7 surveillance, climate control, and real-time inventory management in Chennai."
+    },
+    {
+        question: "How cost-effective are your logistics services?",
+        answer: "Our pricing is competitive and transparent. By optimizing routes, partnerships, and operations, we deliver high-quality logistics services at affordable rates without compromising reliability."
+    },
+    {
+        question: "Why choose your logistics company over others?",
+        answer: "We combine speed, security, advanced tracking technology, professional handling, and customer-first service. Our focus is on timely delivery, operational transparency, and scalable logistics solutions."
+    },
+    {
+        question: "How do I request a quote?",
+        answer: "You can request a quote directly through our website by filling out the inquiry form, or contact us via phone or WhatsApp for immediate assistance."
+    }
 ];
 
 const FAQ = () => {

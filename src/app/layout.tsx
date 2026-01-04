@@ -2,7 +2,13 @@ import "./globals.css";
 import { Providers } from "@/components/Providers";
 import type { Metadata, Viewport } from "next";
 import JsonLd from "@/components/JsonLd";
-import SmoothScroll from "@/components/SmoothScroll";
+import { Outfit } from "next/font/google";
+
+const outfit = Outfit({
+    subsets: ["latin"],
+    display: "swap",
+    variable: "--font-outfit",
+});
 
 export const viewport: Viewport = {
     themeColor: "#0f172a",
@@ -17,17 +23,31 @@ export const metadata: Metadata = {
         default: "Light Speed Logistics | Fast & Reliable Global Shipping",
         template: "%s | Light Speed Logistics",
     },
-    description: "Your trusted logistics partner for domestic & international deliveries. offering express courier, freight forwarding, and customs clearance services from Chennai to the world. Speed. Security. Reliability.",
+    description: "Light Speed Logistics is your trusted partner for international courier services, freight forwarding, and customs clearance in Chennai. We offer fast, secure, and affordable shipping to the USA, UK, Canada, and over 200 countries. Experience seamless door-to-door delivery with real-time tracking.",
     keywords: [
-        "Logistics", "Courier Service", "International Shipping", "Freight Forwarding",
-        "Chennai Logistics", "Fast Delivery", "Secure Shipping", "Light Speed Internationals",
-        "Door to Door Delivery", "Air Freight", "Sea Freight", "Customs Clearance",
-        "Best Courier Service in Chennai", "International Parcel Service",
-        "Cheap Courier to USA from Chennai", "Student Offer Courier Service",
-        "Medicine Delivery International", "Food Items Courier to USA",
-        "Excess Baggage Shipping", "Relocation Services Chennai",
-        "Import Export Agent in Chennai", "Global Logistics Partner",
-        "Export Consultants", "Import Clearance Services", "Heavy Machinery Import"
+        "International Courier Services Chennai",
+        "Best Freight Forwarder in Chennai",
+        "Fastest Courier to USA from India",
+        "Cheap International Shipping Rates",
+        "Door to Door Delivery Service",
+        "Customs Clearance Agent Chennai",
+        "Secure Parcel Delivery",
+        "Student Courier Offers",
+        "Medicine and Food Shipping",
+        "Light Speed Logistics",
+        "Global Logistics Solutions",
+        "Global Freight Forwarding",
+        "International Air Cargo Rates",
+        "Sea Shipping Companies Chennai",
+        "Cross Border Logistics",
+        "Worldwide Parcel Delivery",
+        "Corporate Logistics Services",
+        "B2B International Courier",
+        "Enterprise Freight Solutions",
+        "Business Parcel Delivery Chennai",
+        "Global Supply Chain Partner",
+        "Commercial Shipping Rates",
+        "Logistics for SMEs"
     ],
     appleWebApp: {
         title: "LightSpeed",
@@ -84,7 +104,7 @@ export const metadata: Metadata = {
         "geo.placename": "Chennai",
         "geo.position": "13.0732;80.1934",
         "ICBM": "13.0732, 80.1934",
-        "google-site-verification": "verification_token", // Placeholder for actual token
+        "google-site-verification": "verification_token",
     }
 };
 
@@ -94,14 +114,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <head>
-                <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-                <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-                <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-            </head>
-            <body suppressHydrationWarning className="bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary relative min-h-screen">
+        <html lang="en" suppressHydrationWarning className={outfit.variable}>
+            <head />
+            <body suppressHydrationWarning className="bg-background text-foreground antialiased selection:bg-primary/20 selection:text-primary relative min-h-screen font-sans">
                 {/* Optimized Fixed Background */}
                 <div
                     className="fixed inset-0 -z-50 pointer-events-none"
@@ -113,7 +128,6 @@ export default function RootLayout({
                     }}
                 />
                 <Providers>
-                    <SmoothScroll />
                     {children}
                     <JsonLd />
                 </Providers>

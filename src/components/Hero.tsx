@@ -10,47 +10,31 @@ import lightSpeedLogo from "@/assets/light-speed-logo.png";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Helper for staggered text
-const StaggerText = ({ text, className = "", delayStr = 0 }: { text: string, className?: string, delayStr?: number }) => {
-  const letters = text.split("");
-  return (
-    <span className={`inline-block ${className}`}>
-      {letters.map((letter, i) => (
-        <motion.span
-          key={i}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.4,
-            delay: delayStr + i * 0.03,
-            ease: "easeOut"
-          }}
-          className="inline-block"
-        >
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
-      ))}
-    </span>
-  );
-};
+
 
 // Counter Component
 const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; suffix?: string; duration?: number }) => {
-  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return;
+
     let startTime: number;
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / duration, 1);
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-      setCount(Math.floor(end * easeOutQuart));
+
+      const currentCount = Math.floor(end * easeOutQuart);
+      element.textContent = `${currentCount}${suffix}`;
+
       if (progress < 1) requestAnimationFrame(animate);
     };
     requestAnimationFrame(animate);
-  }, [end, duration]);
+  }, [end, duration, suffix]);
 
-  return <span>{count}{suffix}</span>;
+  return <span ref={ref}>0{suffix}</span>;
 };
 
 const Hero = () => {
@@ -92,34 +76,15 @@ const Hero = () => {
       id="home"
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0f172a]"
     >
-      {/* Background image with fade-in and zoom loop + Scroll Parallax */}
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center origin-center"
+      {/* Background image - CSS Optimized */}
+      <div
+        className="absolute inset-0 bg-cover bg-center origin-center animate-in fade-in duration-1000"
         style={{
           backgroundImage: `url(${heroBg.src})`,
-          y: isMobile ? 0 : bgY
-        }}
-        initial={{ scale: 1.1, opacity: 0 }}
-        animate={
-          isMobile
-            ? { scale: 1.1, opacity: 1 }
-            : {
-              scale: [1.1, 1.15, 1.1],
-              opacity: 1
-            }
-        }
-        transition={{
-          scale: {
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
-          },
-          opacity: {
-            duration: 1.5,
-            ease: "easeOut"
-          }
+          // We can keep parallax if it doesn't break LCP, but for now strict CSS is safest.
+          // Re-enabling scroll parallax via simple transform if needed, but avoiding 'opacity: 0' is key.
         }}
       />
 
@@ -127,27 +92,12 @@ const Hero = () => {
 
 
       {/* Interactive Parallax Blobs - Reduced motion/blur on mobile */}
+      {/* Light Gradient overlay for depth - Static instead of heavy animated blurs */}
       {!isMobile && (
-        <>
-          <motion.div
-            className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[80px] will-change-transform"
-            style={{ x: moveX1, y: moveY1 }}
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3]
-            }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          />
-          <motion.div
-            className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/20 rounded-full blur-[80px] will-change-transform"
-            style={{ x: moveX2, y: moveY2 }}
-            animate={{
-              scale: [1.2, 1, 1.2],
-              opacity: [0.5, 0.3, 0.5]
-            }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          />
-        </>
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-[100px]" />
+          <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-secondary/10 rounded-full blur-[100px]" />
+        </div>
       )}
 
       {/* Dark overlay for text contrast if background is too bright - Optional, currently removed as per request to remove white fades. 
@@ -183,83 +133,49 @@ const Hero = () => {
                   src={lightSpeedLogo}
                   alt="Light Speed Logo"
                   fill
+                  sizes="128px"
                   className="object-contain"
                 />
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Main Heading - Staggered Reveal */}
+          {/* Main Heading - Instant Render Optimization */}
           <div className="relative z-20 mb-8">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-lg">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight drop-shadow-lg animate-in fade-in slide-in-from-bottom-4 duration-700">
               <span className="text-white block pb-2">
-                <StaggerText text="Sky's the Limit," delayStr={0.2} />
+                Sky's the Limit,
               </span>
               <span className="block pb-2">
-                <motion.span
-                  className="text-[#FF6B6B] inline-block mr-3" // Salmon/Red color
-                  initial={{ opacity: 1, x: 0 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0 }}
-                >
-                  We Deliver
-                </motion.span>
-                <motion.span
-                  className="text-[#F4D03F] inline-block" // Beige/Gold color
-                  initial={{ opacity: 1, x: 0 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0 }}
-                >
+                <span className="text-[#FF6B6B] inline-block mr-3">
+                  We Deliver {" "}
+                </span>
+                <span className="text-[#F4D03F] inline-block">
                   Beyond
-                </motion.span>
+                </span>
               </span>
             </h1>
           </div>
 
-          {/* Sub-heading with typewriter effect */}
-          <motion.h2
-            className="mt-6 text-3xl md:text-4xl font-bold tracking-wide drop-shadow-md"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-          >
-            <motion.span
-              className="inline-block text-[#FF6B6B]" // Salmon/Red
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.6, duration: 0.4 }}
-            >
+          {/* Sub-heading */}
+          <h2 className="mt-6 text-3xl md:text-4xl font-bold tracking-wide drop-shadow-md animate-in fade-in slide-in-from-bottom-5 duration-700 delay-150 fill-mode-both">
+            <span className="inline-block text-[#FF6B6B]">
               Speed.
-            </motion.span>{" "}
-            <motion.span
-              className="inline-block text-[#EFF6FF]" // Off-white/AliceBlue
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.7, duration: 0.4 }}
-            >
+            </span>{" "}
+            <span className="inline-block text-[#EFF6FF]">
               Security.
-            </motion.span>{" "}
-            <motion.span
-              className="inline-block text-[#EFF6FF]" // Off-white/AliceBlue
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.8, duration: 0.4 }}
-            >
+            </span>{" "}
+            <span className="inline-block text-[#EFF6FF]">
               Reliability.
-            </motion.span>
-          </motion.h2>
+            </span>
+          </h2>
 
           {/* Description */}
-          <motion.p
-            className="mt-6 text-lg md:text-xl text-gray-200/90 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-sm"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.9 }}
-          >
+          <p className="mt-6 text-lg md:text-xl text-gray-200/90 font-medium max-w-2xl mx-auto leading-relaxed drop-shadow-sm animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200 fill-mode-both">
             Your trusted logistics partner for domestic & international deliveries.
             From express courier services to complete freight management, we ensure
             your shipments reach safely — every time.
-          </motion.p>
+          </p>
 
           {/* CTA Buttons - Magnetic */}
           <motion.div
@@ -286,7 +202,7 @@ const Hero = () => {
                 className="text-base font-semibold px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors shadow-lg hover:shadow-xl"
                 onClick={scrollToQuote}
               >
-                Request Quota
+                Request Quote
               </Button>
             </MagneticButton>
           </motion.div>
