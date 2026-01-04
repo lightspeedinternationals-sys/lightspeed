@@ -1,10 +1,25 @@
 "use client";
 
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import React from "react";
+import { Phone, Mail, MapPin, Share2, ArrowRight, Linkedin, Instagram } from "lucide-react";
 import { motion } from "framer-motion";
 
+interface ContactItem {
+    icon: React.ReactNode;
+    title: string;
+    content: string;
+    href: string;
+    whatsappHref?: string;
+    action?: string;
+    socialLinks?: {
+        label: string;
+        href: string;
+        icon: React.ReactNode;
+    }[];
+}
+
 const ContactSection = () => {
-    const contactDetails = [
+    const contactDetails: ContactItem[] = [
         {
             icon: <Phone className="w-8 h-8 text-[#FF0000]" />,
             title: "Phone / WhatsApp",
@@ -25,6 +40,24 @@ const ContactSection = () => {
             content: "57, Periyar Street, Padikuppam\nKoyambedu, Chennai – 600107",
             href: "https://maps.google.com/?q=57+Periyar+Street+Padikuppam+Koyambedu+Chennai+600107",
         },
+        {
+            icon: <Share2 className="w-8 h-8 text-[#FF0000]" />,
+            title: "Follow Us",
+            content: "Stay connected for updates",
+            href: "#",
+            socialLinks: [
+                {
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/company/lightspeed-internationals/?viewAsMember=true",
+                    icon: <Linkedin className="w-4 h-4 ml-1" />
+                },
+                {
+                    label: "Instagram",
+                    href: "https://www.instagram.com/lightspeedinternationals?igsh=Y2xsdnA2ZWx3aTNz",
+                    icon: <Instagram className="w-4 h-4 ml-1" />
+                }
+            ]
+        },
     ];
 
     return (
@@ -39,7 +72,7 @@ const ContactSection = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                     {contactDetails.map((item, index) => (
                         <motion.div
                             key={index}
@@ -57,16 +90,14 @@ const ContactSection = () => {
                                 {item.title}
                             </h3>
 
-                            {/* Info */}
-
-
                             {/* Main Content Link */}
                             <a
                                 href={item.href}
-                                target={item.icon.type === MapPin ? "_blank" : undefined}
-                                rel={item.icon.type === MapPin ? "noopener noreferrer" : undefined}
-                                className="text-gray-600 font-medium mb-4 whitespace-pre-line block hover:text-[#FF0000] transition-colors break-words"
+                                target={item.title === "Address" ? "_blank" : undefined}
+                                rel={item.title === "Address" ? "noopener noreferrer" : undefined}
+                                className={`text-gray-600 font-medium mb-4 whitespace-pre-line block ${item.title !== 'Follow Us' ? 'hover:text-[#FF0000]' : ''} transition-colors break-words`}
                                 aria-label={`Contact via ${item.title}`}
+                                onClick={(e) => item.title === 'Follow Us' && e.preventDefault()}
                             >
                                 {item.content}
                             </a>
@@ -81,6 +112,23 @@ const ContactSection = () => {
                                 >
                                     {item.action} <ArrowRight className="w-4 h-4 ml-1" />
                                 </a>
+                            )}
+
+                            {/* Social Links */}
+                            {item.socialLinks && (
+                                <div className="flex flex-col gap-2 mt-2 items-center">
+                                    {item.socialLinks.map((link, idx) => (
+                                        <a
+                                            key={idx}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-[#FF0000] font-medium inline-flex items-center hover:underline"
+                                        >
+                                            {link.label} {link.icon}
+                                        </a>
+                                    ))}
+                                </div>
                             )}
                         </motion.div>
                     ))}
