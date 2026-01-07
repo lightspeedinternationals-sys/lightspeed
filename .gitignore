@@ -12,6 +12,17 @@ dist
 dist-ssr
 *.local
 
+# Environment files - NEVER commit these
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env*.local
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -24,6 +35,14 @@ dist-ssr
 *.sln
 *.sw?
 
+# Next.js
 .next
+out
+
+# Build outputs
 *.zip
 start-production.zip
+
+# Vercel/Netlify
+.vercel
+.netlify
