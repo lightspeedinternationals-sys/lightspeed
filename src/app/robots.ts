@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
 
-export default function robots(): MetadataRoute.Robots {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://lightspeedinternationals.com'
+// Hardcoded production URL - DO NOT use env vars (causes Netlify secrets scanner issues)
+const SITE_URL = 'https://lightspeedinternationals.com'
 
+export default function robots(): MetadataRoute.Robots {
     return {
         rules: [
             // Allow all major search engines
@@ -80,7 +81,7 @@ export default function robots(): MetadataRoute.Robots {
                 disallow: ['/api/', '/private/', '/_next/', '/admin/'],
             },
         ],
-        sitemap: `${baseUrl}/sitemap.xml`,
-        host: baseUrl,
+        sitemap: `${SITE_URL}/sitemap.xml`,
+        host: SITE_URL,
     }
 }

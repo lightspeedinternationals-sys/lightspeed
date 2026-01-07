@@ -9,13 +9,6 @@
 [build.environment]
   NODE_VERSION = "22"
   NEXT_TELEMETRY_DISABLED = "1"
-  # IMPORTANT: Disable secrets scanner - verified no real secrets exist
-  # The scanner is triggering false positives on:
-  # - URL domain strings (lightspeedinternationals.com)
-  # - Package lockfile hashes
-  # - Schema.org structured data
-  # All actual secrets are stored in Netlify Environment Variables
-  SECRETS_SCAN_ENABLED = "false"
 
 # Headers for static assets (performance optimization)
 [[headers]]

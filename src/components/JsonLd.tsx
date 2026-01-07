@@ -2,8 +2,11 @@
 
 import Script from "next/script";
 
+// Hardcoded production URL - DO NOT use env vars (causes Netlify secrets scanner issues)
+const SITE_URL = "https://lightspeedinternationals.com";
+
 const JsonLd = () => {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com";
+    const baseUrl = SITE_URL;
 
     // Optimized LocalBusiness Schema (Replacing Organization for better Local SEO)
     const localBusinessSchema = {

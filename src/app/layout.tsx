@@ -10,6 +10,9 @@ const outfit = Outfit({
     variable: "--font-outfit",
 });
 
+// Hardcoded production URL - DO NOT use env vars (causes Netlify secrets scanner issues)
+const SITE_URL = "https://lightspeedinternationals.com";
+
 export const viewport: Viewport = {
     themeColor: "#0f172a",
     width: "device-width",
@@ -18,7 +21,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com"),
+    metadataBase: new URL(SITE_URL),
     title: {
         default: "International Courier Service Chennai | Light Speed Logistics - Fast Global Shipping",
         template: "%s | Light Speed Logistics",
@@ -73,13 +76,13 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        url: process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com",
+        url: SITE_URL,
         title: "Light Speed Logistics | We Deliver Beyond",
         description: "Speed. Security. Reliability. Trusted international courier and freight services from Chennai.",
         siteName: "Light Speed Logistics",
         images: [
             {
-                url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com"}/og-image.jpg`,
+                url: `${SITE_URL}/og-image.jpg`,
                 width: 1200,
                 height: 630,
                 alt: "Light Speed Logistics Hero Banner",
@@ -93,13 +96,12 @@ export const metadata: Metadata = {
         images: ["/og-image.jpg"],
     },
     alternates: {
-        canonical: process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com",
+        canonical: SITE_URL,
         languages: {
-            'en-US': process.env.NEXT_PUBLIC_BASE_URL || 'https://lightspeedinternationals.com',
+            'en-US': SITE_URL,
         },
     },
     category: "Logistics",
-    // Social Media Profiles
     other: {
         "og:see_also": [
             "https://www.linkedin.com/company/lightspeed-internationals/",
@@ -109,19 +111,11 @@ export const metadata: Metadata = {
         "geo.placename": "Chennai",
         "geo.position": "13.0732;80.1934",
         "ICBM": "13.0732, 80.1934",
-        // Google verification
-        "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'your-google-verification-code',
-        // Bing/Microsoft specific
         "msapplication-TileColor": "#0f172a",
         "msapplication-TileImage": "/ms-icon-144x144.png",
-        "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION || 'bing-verification',
-        // Yahoo specific
-        "y_key": process.env.NEXT_PUBLIC_YAHOO_VERIFICATION || 'yahoo-verification',
-        // Bot directives
         "bingbot": "index, follow, max-snippet:-1, max-image-preview:large",
-        "slurp": "index, follow", // Yahoo
+        "slurp": "index, follow",
         "googlebot": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
-        // AI & Voice optimization
         "rating": "general",
         "distribution": "global",
         "revisit-after": "1 days",
