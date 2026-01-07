@@ -20,10 +20,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || "https://lightspeedinternationals.com"),
     title: {
-        default: "Light Speed Logistics | Fast & Reliable Global Shipping",
+        default: "International Courier Service Chennai | Light Speed Logistics - Fast Global Shipping",
         template: "%s | Light Speed Logistics",
     },
-    description: "Light Speed Logistics is your trusted partner for international courier services, freight forwarding, and customs clearance in Chennai. We offer fast, secure, and affordable shipping to the USA, UK, Canada, and over 200 countries. Experience seamless door-to-door delivery with real-time tracking.",
+    description: "#1 International Courier Service in Chennai. Light Speed Logistics offers express freight forwarding, customs clearance & door-to-door shipping to USA, UK, Canada. Fast, secure & affordable. Real-time tracking. 24/7 support. Get instant quote!",
     keywords: [
         "International Courier Services Chennai",
         "Best Freight Forwarder in Chennai",
@@ -99,12 +99,32 @@ export const metadata: Metadata = {
         },
     },
     category: "Logistics",
+    // Social Media Profiles
     other: {
+        "og:see_also": [
+            "https://www.linkedin.com/company/lightspeed-internationals/",
+            "https://www.instagram.com/lightspeedinternationals"
+        ],
         "geo.region": "IN-TN",
         "geo.placename": "Chennai",
         "geo.position": "13.0732;80.1934",
         "ICBM": "13.0732, 80.1934",
-        "google-site-verification": "verification_token",
+        // Google verification
+        "google-site-verification": process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'your-google-verification-code',
+        // Bing/Microsoft specific
+        "msapplication-TileColor": "#0f172a",
+        "msapplication-TileImage": "/ms-icon-144x144.png",
+        "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION || 'bing-verification',
+        // Yahoo specific
+        "y_key": process.env.NEXT_PUBLIC_YAHOO_VERIFICATION || 'yahoo-verification',
+        // Bot directives
+        "bingbot": "index, follow, max-snippet:-1, max-image-preview:large",
+        "slurp": "index, follow", // Yahoo
+        "googlebot": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+        // AI & Voice optimization
+        "rating": "general",
+        "distribution": "global",
+        "revisit-after": "1 days",
     }
 };
 

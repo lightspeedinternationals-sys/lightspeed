@@ -36,7 +36,11 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-50 border-t border-gray-200">
+    <footer id="footer" aria-label="Light Speed Internationals Footer" itemScope itemType="https://schema.org/Organization" className="bg-gray-50 border-t border-gray-200">
+      <meta itemProp="name" content="Light Speed Internationals" />
+      <meta itemProp="url" content="https://lightspeedinternationals.com" />
+      <link itemProp="sameAs" href="https://www.linkedin.com/company/lightspeed-internationals/" />
+      <link itemProp="sameAs" href="https://www.instagram.com/lightspeedinternationals" />
       <div className="container-custom py-12">
         {/* Logo Section */}
         <motion.div
@@ -127,7 +131,7 @@ const Footer = () => {
                   Request a Quote
                 </motion.button>
               </li>
-              {["Services", "Terms & Conditions", "Privacy Policy"].map((item) => (
+              {["Services", "Terms & Conditions"].map((item) => (
                 <li key={item}>
                   <motion.a
                     href="#"
@@ -140,6 +144,17 @@ const Footer = () => {
                   </motion.a>
                 </li>
               ))}
+              <li>
+                <motion.a
+                  href="#privacy"
+                  className="text-gray-600 hover:text-[#ff3c3c] inline-block transition-colors"
+                  variants={linkVariants}
+                  whileHover="hover"
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Privacy Policy
+                </motion.a>
+              </li>
             </ul>
           </motion.div>
 

@@ -67,7 +67,7 @@ ${formData.message || "None"}
   };
 
   return (
-    <section id="quote-section" className="section-padding bg-background relative overflow-hidden">
+    <section id="quote-section" aria-label="Request Quote - International Courier Chennai" className="section-padding bg-background relative overflow-hidden">
       <div className="container-custom relative z-10">
         <div className="text-center mb-12 space-y-4">
           <motion.div
@@ -76,9 +76,9 @@ ${formData.message || "None"}
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
-              Request a Quote
+              Request a Quote for International Courier
             </h2>
-            <p className="text-xl text-primary font-semibold">Get in Touch With Us!</p>
+            <p className="text-xl text-primary font-semibold">Get in Touch With Light Speed Internationals Chennai!</p>
           </motion.div>
         </div>
 

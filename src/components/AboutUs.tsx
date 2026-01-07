@@ -25,19 +25,20 @@ const AnimatedCounter = ({ end, suffix = "", duration = 2000 }: { end: number; s
 
 const AboutUs = () => {
   return (
-    <section className="section-padding bg-white overflow-hidden">
+    <section id="about" aria-labelledby="about-heading" className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content Side */}
           <div className="space-y-6 text-center lg:text-left">
             <motion.h2
+              id="about-heading"
               className="text-4xl md:text-5xl font-bold text-gray-900"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              About <span className="text-[#ff3c3c]">LIGHT SPEED</span>
+              About <span className="text-[#ff3c3c]">LIGHT SPEED</span> Internationals Chennai
             </motion.h2>
 
             <motion.p

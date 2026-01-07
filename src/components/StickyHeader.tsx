@@ -17,7 +17,7 @@ const navLinks = [
   { name: "Services", href: "#services" },
   { name: "Quote", href: "#quote-section" },
   { name: "About", href: "#about" },
-  { name: "Contact", href: "#footer" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const StickyHeader = () => {

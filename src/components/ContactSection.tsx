@@ -61,14 +61,17 @@ const ContactSection = () => {
     ];
 
     return (
-        <section className="py-20 bg-gray-200">
+        <section id="contact" aria-label="Contact Light Speed Internationals Chennai" itemScope itemType="https://schema.org/LocalBusiness" className="py-20 bg-gray-200">
+            <meta itemProp="name" content="Light Speed Internationals" />
+            <meta itemProp="telephone" content="+91-95666-50409" />
+            <meta itemProp="email" content="lightspeedinternationals@gmail.com" />
             <div className="container mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
                         Contact <span className="text-[#FF0000]">Us</span>
                     </h2>
                     <p className="text-gray-600 text-lg">
-                        Get in touch with us for all your logistics needs. We're here to help!
+                        Get in touch with Light Speed Internationals Chennai for all your international courier and logistics needs!
                     </p>
                 </div>
 

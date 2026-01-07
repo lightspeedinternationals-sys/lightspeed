@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import ServiceTabs from "@/components/ServiceTabs";
 import QuoteForm from "@/components/QuoteForm";
 import ThingsWeDeliver from "@/components/ThingsWeDeliver";
+import GlobalReach from "@/components/GlobalReach";
 import ServiceHighlights from "@/components/ServiceHighlights";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AboutUs from "@/components/AboutUs";
@@ -13,6 +14,8 @@ import CursorFollower from "@/components/CursorFollower";
 
 import FAQ from "@/components/FAQ";
 import ContactSection from "@/components/ContactSection";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
+import CookieConsent from "@/components/CookieConsent";
 
 const Index = () => {
   return (
@@ -24,6 +27,7 @@ const Index = () => {
       <ServiceTabs />
       <QuoteForm />
       <ThingsWeDeliver />
+      <GlobalReach />
       <ServiceHighlights />
       <WhyChooseUs />
       <AboutUs />
@@ -31,7 +35,9 @@ const Index = () => {
       <FAQ />
       <Partners />
       <ContactSection />
+      <PrivacyPolicy />
       <Footer />
+      <CookieConsent />
     </div>
   );
 };

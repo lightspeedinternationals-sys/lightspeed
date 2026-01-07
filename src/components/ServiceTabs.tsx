@@ -61,7 +61,7 @@ const ServiceTabs = () => {
   const activeService = services.find((s) => s.id === activeTab) || services[0];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-muted/20">
+    <section id="services" aria-label="International Courier Services Chennai" className="section-padding bg-gradient-to-b from-background to-muted/20">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
@@ -76,7 +76,7 @@ const ServiceTabs = () => {
             <span className="text-primary">SERVICES</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-4xl mx-auto">
-            Courier Services | Warehousing | Freight Forwarding | Customized Logistic Solutions
+            International Courier Services | Warehousing | Freight Forwarding | Customized Logistic Solutions in Chennai
           </p>
           <p className="text-foreground/80 max-w-3xl mx-auto leading-relaxed">
             We deliver end-to-end logistics solutions designed to support your business growth.
